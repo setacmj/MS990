@@ -1,0 +1,2292 @@
+{
+  "227": {
+    "4": {
+      "ulx": 2336,
+      "uly": 4920,
+      "lrx": 2958,
+      "lry": 5640,
+      "label": "Herz"
+    },
+    "0": {
+      "ulx": 177,
+      "uly": 260,
+      "lrx": 1171,
+      "lry": 1768,
+      "label": "Pfordt Adern"
+    },
+    "1": {
+      "ulx": 166,
+      "uly": 4592,
+      "lrx": 976,
+      "lry": 6510,
+      "label": "Nabel Adern"
+    },
+    "2": {
+      "ulx": 2260,
+      "uly": 274,
+      "lrx": 3111,
+      "lry": 1405,
+      "label": "Von der Lungel"
+    },
+    "3": {
+      "ulx": 2354,
+      "uly": 3221,
+      "lrx": 2993,
+      "lry": 4009,
+      "label": "Herz Heisel oder Pericartio"
+    }
+  },
+  "228": {
+    "4": {
+      "ulx": 3396,
+      "uly": 5770,
+      "lrx": 4037,
+      "lry": 6593,
+      "label": "Gall"
+    },
+    "0": {
+      "ulx": 1282,
+      "uly": 2234,
+      "lrx": 1895,
+      "lry": 2974,
+      "label": "Herz Khamer"
+    },
+    "1": {
+      "ulx": 1334,
+      "uly": 3851,
+      "lrx": 1860,
+      "lry": 4544,
+      "label": "Thürlein des Herzen"
+    },
+    "2": {
+      "ulx": 3304,
+      "uly": 356,
+      "lrx": 4170,
+      "lry": 1055,
+      "label": "Herz Bladt Diaphragma"
+    },
+    "3": {
+      "ulx": 3206,
+      "uly": 2892,
+      "lrx": 4118,
+      "lry": 3564,
+      "label": "Leber"
+    }
+  },
+  "466": {
+    "0": {
+      "ulx": 1510,
+      "uly": 343,
+      "lrx": 3673,
+      "lry": 4468,
+      "label": "Nervous system anatomical figure"
+    }
+  },
+  "469": {
+    "0": {
+      "ulx": 271,
+      "uly": 726,
+      "lrx": 2337,
+      "lry": 3536,
+      "label": "Für dein Kranckheit ist khein Khraudt..."
+    }
+  },
+  "470": {
+    "0": {
+      "ulx": 1445,
+      "uly": 3618,
+      "lrx": 2225,
+      "lry": 4934,
+      "label": "Ein khöstliches Badt für die Podagraische schwache füeß."
+    },
+    "1": {
+      "ulx": 3579,
+      "uly": 2549,
+      "lrx": 4154,
+      "lry": 3344,
+      "label": "Die Artzeney wird also gebraucht."
+    }
+  },
+  "471": {
+    "0": {
+      "ulx": 154,
+      "uly": 4386,
+      "lrx": 388,
+      "lry": 4900,
+      "label": "Volgen Andere der gleichen, Khöstliche Pulluer für die Podagraische"
+    },
+    "1": {
+      "ulx": 2274,
+      "uly": 2234,
+      "lrx": 3016,
+      "lry": 2892,
+      "label": "Der Khünigin Elisabeth in Ungern Von Gott geoffen bahrtes ▽ für das Podagra"
+    }
+  },
+  "473": {
+    "0": {
+      "ulx": 160,
+      "uly": 2179,
+      "lrx": 1130,
+      "lry": 3481,
+      "label": "Illustration of a man suffering from sciatica (Von dem Schiatica)"
+    }
+  },
+  "475": {
+    "0": {
+      "ulx": 2341,
+      "uly": 4852,
+      "lrx": 3300,
+      "lry": 6133,
+      "label": "Foot in a wooden tub (podagra footbath)"
+    }
+  },
+  "476": {
+    "0": {
+      "ulx": 1215,
+      "uly": 302,
+      "lrx": 2634,
+      "lry": 1679,
+      "label": "Seated man with erysipelas ('Die Schön') on his lower legs"
+    }
+  },
+  "477": {
+    "0": {
+      "ulx": 201,
+      "uly": 5448,
+      "lrx": 1173,
+      "lry": 6510,
+      "label": "Swollen knee ('Khine Schwaam')"
+    }
+  },
+  "478": {
+    "0": {
+      "ulx": 1112,
+      "uly": 3865,
+      "lrx": 3295,
+      "lry": 6085,
+      "label": "Seated man with clasped hands"
+    }
+  },
+  "479": {
+    "0": {
+      "ulx": 2347,
+      "uly": 2399,
+      "lrx": 3389,
+      "lry": 3783,
+      "label": "Cloth held over pan of coals"
+    },
+    "1": {
+      "ulx": 2347,
+      "uly": 5496,
+      "lrx": 3061,
+      "lry": 6373,
+      "label": "Wooden foot-bath tub"
+    }
+  },
+  "481": {
+    "0": {
+      "ulx": 864,
+      "uly": 3893,
+      "lrx": 2351,
+      "lry": 4770,
+      "label": "Cold tumor on the leg and foot (in 'Von denen khalten Tumoren an denen fießen vnd armen')"
+    }
+  },
+  "482": {
+    "0": {
+      "ulx": 3556,
+      "uly": 535,
+      "lrx": 5723,
+      "lry": 2563,
+      "label": "Seated man with ulcerated legs (above 'Von alle Schäden an fießen')"
+    }
+  },
+  "485": {
+    "0": {
+      "ulx": 200,
+      "uly": 1953,
+      "lrx": 1301,
+      "lry": 3522,
+      "label": "Lower-leg ulceration and bandaging on a seated patient"
+    }
+  },
+  "486": {
+    "0": {
+      "ulx": 1232,
+      "uly": 3961,
+      "lrx": 3594,
+      "lry": 5311,
+      "label": "Ulcerated lower leg resting on a wooden footstool"
+    }
+  },
+  "487": {
+    "0": {
+      "ulx": 201,
+      "uly": 2296,
+      "lrx": 2337,
+      "lry": 3529,
+      "label": "Leg with red spots resting heel on cylindrical block"
+    }
+  },
+  "488": {
+    "0": {
+      "ulx": 1218,
+      "uly": 4441,
+      "lrx": 2658,
+      "lry": 5722,
+      "label": "Anfang."
+    }
+  },
+  "489": {
+    "0": {
+      "ulx": 218,
+      "uly": 5030,
+      "lrx": 2270,
+      "lry": 6497,
+      "label": "242"
+    }
+  },
+  "491": {
+    "0": {
+      "ulx": 2422,
+      "uly": 589,
+      "lrx": 4593,
+      "lry": 2481,
+      "label": "Contractura."
+    }
+  },
+  "497": {
+    "0": {
+      "ulx": 182,
+      "uly": 4352,
+      "lrx": 2356,
+      "lry": 6058,
+      "label": "Anfang. / Von Schwinden der Glider"
+    }
+  },
+  "499": {
+    "0": {
+      "ulx": 181,
+      "uly": 240,
+      "lrx": 2310,
+      "lry": 2275,
+      "label": "aufgehört."
+    }
+  },
+  "500": {
+    "0": {
+      "ulx": 3525,
+      "uly": 1138,
+      "lrx": 4341,
+      "lry": 1617,
+      "label": "Yellow spotted sponge or stone"
+    }
+  },
+  "501": {
+    "0": {
+      "ulx": 178,
+      "uly": 322,
+      "lrx": 1511,
+      "lry": 1754,
+      "label": "Bare leg and foot resting on block"
+    },
+    "1": {
+      "ulx": 213,
+      "uly": 5551,
+      "lrx": 1447,
+      "lry": 6476,
+      "label": "Walking lion"
+    }
+  },
+  "502": {
+    "0": {
+      "ulx": 1381,
+      "uly": 1487,
+      "lrx": 3045,
+      "lry": 2433,
+      "label": "Ein anders der Graue Wolff genandt."
+    },
+    "1": {
+      "ulx": 4377,
+      "uly": 4379,
+      "lrx": 4636,
+      "lry": 4564,
+      "label": "tz Puluär Gar kröfftig"
+    }
+  },
+  "504": {
+    "0": {
+      "ulx": 1371,
+      "uly": 2405,
+      "lrx": 3713,
+      "lry": 3550,
+      "label": "Von Angeloffnen Schbarzen painern"
+    }
+  },
+  "505": {
+    "0": {
+      "ulx": 2425,
+      "uly": 329,
+      "lrx": 3944,
+      "lry": 1103,
+      "label": "Pointing hand (top of right column)"
+    }
+  },
+  "506": {
+    "0": {
+      "ulx": 1399,
+      "uly": 2316,
+      "lrx": 3688,
+      "lry": 3625,
+      "label": "Man firing a musket (Von den Geschoßnen Wunden)"
+    }
+  },
+  "509": {
+    "0": {
+      "ulx": 229,
+      "uly": 322,
+      "lrx": 2373,
+      "lry": 2076,
+      "label": "[Untitled illustration of a man afflicted with fistulas/lesions]"
+    }
+  },
+  "511": {
+    "0": {
+      "ulx": 269,
+      "uly": 3625,
+      "lrx": 4670,
+      "lry": 6551,
+      "label": "diser Vnder glich Instrumenta ~"
+    }
+  },
+  "513": {
+    "0": {
+      "ulx": 181,
+      "uly": 439,
+      "lrx": 2306,
+      "lry": 1960,
+      "label": "Patient suffering from fistulas/sores (above 'Von den fistlen des Vndern Leibs')"
+    }
+  },
+  "515": {
+    "0": {
+      "ulx": 523,
+      "uly": 2241,
+      "lrx": 1744,
+      "lry": 2584,
+      "label": "Surgical probe or spatula"
+    }
+  },
+  "517": {
+    "0": {
+      "ulx": 230,
+      "uly": 274,
+      "lrx": 2492,
+      "lry": 5654,
+      "label": "Wundmann (Wound Man) illustration"
+    }
+  },
+  "528": {
+    "0": {
+      "ulx": 1609,
+      "uly": 274,
+      "lrx": 3697,
+      "lry": 1802,
+      "label": "435."
+    }
+  },
+  "534": {
+    "0": {
+      "ulx": 1704,
+      "uly": 356,
+      "lrx": 3637,
+      "lry": 2974,
+      "label": "Surgical excision of breast cancer"
+    },
+    "1": {
+      "ulx": 3782,
+      "uly": 1528,
+      "lrx": 5849,
+      "lry": 6565,
+      "label": "Instrumenta Welche Zu dieser operation gebraucht werden."
+    }
+  },
+  "535": {
+    "0": {
+      "ulx": 187,
+      "uly": 2536,
+      "lrx": 2310,
+      "lry": 4071,
+      "label": "Anfang."
+    }
+  },
+  "537": {
+    "0": {
+      "ulx": 2270,
+      "uly": 2501,
+      "lrx": 4449,
+      "lry": 4311,
+      "label": "Von den Krezen"
+    }
+  },
+  "538": {
+    "0": {
+      "ulx": 4088,
+      "uly": 1809,
+      "lrx": 5337,
+      "lry": 2899,
+      "label": "Medicated Shirt for Curing Itching (Scabies)"
+    }
+  },
+  "540": {
+    "0": {
+      "ulx": 1456,
+      "uly": 350,
+      "lrx": 3633,
+      "lry": 2001,
+      "label": "Person Afflicted with Facial Pustules (Smallpox / Fladern)"
+    }
+  },
+  "545": {
+    "0": {
+      "ulx": 2259,
+      "uly": 308,
+      "lrx": 4428,
+      "lry": 2104,
+      "label": "Seated figure with extended bare leg"
+    }
+  },
+  "547": {
+    "0": {
+      "ulx": 145,
+      "uly": 576,
+      "lrx": 2141,
+      "lry": 2049,
+      "label": "Bain Krebs. Bain fresser / Bain falle."
+    }
+  },
+  "554": {
+    "0": {
+      "ulx": 4828,
+      "uly": 5112,
+      "lrx": 5757,
+      "lry": 6092,
+      "label": "Sciatica cupping diagram"
+    }
+  },
+  "557": {
+    "0": {
+      "ulx": 54,
+      "uly": 133,
+      "lrx": 1476,
+      "lry": 698,
+      "label": "Illustration of the salivation and sweating cure"
+    }
+  },
+  "567": {
+    "0": {
+      "ulx": 63,
+      "uly": 307,
+      "lrx": 729,
+      "lry": 776,
+      "label": "Medicated Bath Cure (Bad Chur)"
+    }
+  },
+  "571": {
+    "0": {
+      "ulx": 760,
+      "uly": 1622,
+      "lrx": 1116,
+      "lry": 1890,
+      "label": "Wolff oder fresente geschwer"
+    }
+  },
+  "573": {
+    "0": {
+      "ulx": 61,
+      "uly": 93,
+      "lrx": 742,
+      "lry": 758,
+      "label": "Krankheiten der Kinder — Domestic nursery scene"
+    }
+  },
+  "581": {
+    "0": {
+      "ulx": 99,
+      "uly": 128,
+      "lrx": 400,
+      "lry": 203,
+      "label": "Gold/ochre rectangular patch (top left)"
+    },
+    "1": {
+      "ulx": 752,
+      "uly": 124,
+      "lrx": 864,
+      "lry": 283,
+      "label": "Reddish-brown oval medallion (top right column)"
+    }
+  },
+  "587": {
+    "0": {
+      "ulx": 747,
+      "uly": 1795,
+      "lrx": 1012,
+      "lry": 2106,
+      "label": "Anatomical eye diagram"
+    }
+  },
+  "589": {
+    "0": {
+      "ulx": 65,
+      "uly": 118,
+      "lrx": 774,
+      "lry": 1280,
+      "label": "Young woman spinning with a distaff"
+    }
+  },
+  "606": {
+    "0": {
+      "ulx": 1498,
+      "uly": 844,
+      "lrx": 2271,
+      "lry": 1022,
+      "label": "Brass/gold clyster syringe and angled nozzle"
+    }
+  },
+  "608": {
+    "0": {
+      "ulx": 1520,
+      "uly": 1931,
+      "lrx": 2317,
+      "lry": 2487,
+      "label": "Wie die ♀V. khugel oder chränzel sollen gemacht."
+    }
+  },
+  "622": {
+    "0": {
+      "ulx": 893,
+      "uly": 1974,
+      "lrx": 1285,
+      "lry": 2140,
+      "label": "Red watercolor illustration of a crayfish or crab (Krebs)"
+    }
+  },
+  "634": {
+    "0": {
+      "ulx": 1435,
+      "uly": 98,
+      "lrx": 2316,
+      "lry": 631,
+      "label": "Patient lying in bed (Salivation cure for Morbus Gallicus)"
+    }
+  },
+  "637": {
+    "0": {
+      "ulx": 108,
+      "uly": 163,
+      "lrx": 1090,
+      "lry": 711,
+      "label": "Three blue-grey apothecary bottles on a shelf"
+    }
+  },
+  "638": {
+    "0": {
+      "ulx": 1541,
+      "uly": 1097,
+      "lrx": 2304,
+      "lry": 1513,
+      "label": "Two terracotta-red earthenware jugs on a shelf"
+    }
+  },
+  "639": {
+    "0": {
+      "ulx": 1099,
+      "uly": 2282,
+      "lrx": 2100,
+      "lry": 2625,
+      "label": "Three apothecary vessels on a shelf"
+    }
+  },
+  "641": {
+    "0": {
+      "ulx": 1087,
+      "uly": 98,
+      "lrx": 2107,
+      "lry": 853,
+      "label": "Apothecary preparing a plaster over a brazier"
+    }
+  },
+  "645": {
+    "0": {
+      "ulx": 139,
+      "uly": 121,
+      "lrx": 1027,
+      "lry": 370,
+      "label": "Watercolor illustration of an apothecary plaster-spreading board or tray"
+    }
+  },
+  "649": {
+    "0": {
+      "ulx": 1095,
+      "uly": 110,
+      "lrx": 2089,
+      "lry": 465,
+      "label": "Four apothecary ointment jars"
+    }
+  },
+  "661": {
+    "0": {
+      "ulx": 134,
+      "uly": 98,
+      "lrx": 2107,
+      "lry": 1429,
+      "label": "Wounded man in a landscape"
+    }
+  },
+  "670": {
+    "0": {
+      "ulx": 516,
+      "uly": 181,
+      "lrx": 715,
+      "lry": 391,
+      "label": "Heart"
+    },
+    "1": {
+      "ulx": 492,
+      "uly": 501,
+      "lrx": 756,
+      "lry": 692,
+      "label": "Diaphragm"
+    },
+    "2": {
+      "ulx": 492,
+      "uly": 793,
+      "lrx": 732,
+      "lry": 1021,
+      "label": "Stomach"
+    },
+    "3": {
+      "ulx": 1356,
+      "uly": 282,
+      "lrx": 1596,
+      "lry": 616,
+      "label": "Liver and Spleen"
+    },
+    "4": {
+      "ulx": 1435,
+      "uly": 1086,
+      "lrx": 1771,
+      "lry": 1226,
+      "label": "Gallbladder"
+    },
+    "5": {
+      "ulx": 1375,
+      "uly": 1321,
+      "lrx": 1699,
+      "lry": 1595,
+      "label": "Intestines"
+    }
+  },
+  "671": {
+    "0": {
+      "ulx": 1109,
+      "uly": 1229,
+      "lrx": 1368,
+      "lry": 1518,
+      "label": "Mesentery (Das Kress mesenterij)"
+    },
+    "1": {
+      "ulx": 1092,
+      "uly": 1674,
+      "lrx": 1308,
+      "lry": 2069,
+      "label": "Kidneys and Bladder (Die Niern vnnd Plasen)"
+    }
+  },
+  "685": {
+    "0": {
+      "ulx": 139,
+      "uly": 109,
+      "lrx": 1116,
+      "lry": 791,
+      "label": "Was ain Guetter Chirurgo oder Wundarzt Haben soll Und Wie Sein apodekhen eingerichtet Sein Soll."
+    }
+  },
+  "693": {
+    "0": {
+      "ulx": 132,
+      "uly": 221,
+      "lrx": 1133,
+      "lry": 784,
+      "label": "Bruised or fractured human foot"
+    }
+  },
+  "699": {
+    "0": {
+      "ulx": 108,
+      "uly": 132,
+      "lrx": 2173,
+      "lry": 1076,
+      "label": "Surgical Preparation for Limb Amputation"
+    }
+  },
+  "705": {
+    "0": {
+      "ulx": 101,
+      "uly": 133,
+      "lrx": 1181,
+      "lry": 840,
+      "label": "Apothecary shelves with jars, bottles, and vessels"
+    }
+  },
+  "727": {
+    "0": {
+      "ulx": 108,
+      "uly": 96,
+      "lrx": 507,
+      "lry": 955,
+      "label": "Eye with extraocular muscles (labeled A)"
+    },
+    "1": {
+      "ulx": 564,
+      "uly": 80,
+      "lrx": 1253,
+      "lry": 834,
+      "label": "Splayed extraocular muscles and optic nerve (labeled A–I, a)"
+    },
+    "2": {
+      "ulx": 233,
+      "uly": 782,
+      "lrx": 418,
+      "lry": 962,
+      "label": "Crystalline humor with aranea membrane (labeled B)"
+    },
+    "3": {
+      "ulx": 257,
+      "uly": 1090,
+      "lrx": 384,
+      "lry": 1212,
+      "label": "Crystalline humor alone (labeled D)"
+    },
+    "4": {
+      "ulx": 941,
+      "uly": 891,
+      "lrx": 1119,
+      "lry": 1045,
+      "label": "Vitreous and crystalline humor (labeled C)"
+    },
+    "5": {
+      "ulx": 399,
+      "uly": 551,
+      "lrx": 869,
+      "lry": 1715,
+      "label": "Layered anatomical flap diagram of the eye (closed state, labeled B, F, H)"
+    }
+  },
+  "728": {
+    "0": {
+      "ulx": 108,
+      "uly": 97,
+      "lrx": 506,
+      "lry": 959,
+      "label": "Eye with extraocular muscles (labeled A)"
+    },
+    "1": {
+      "ulx": 564,
+      "uly": 80,
+      "lrx": 1253,
+      "lry": 837,
+      "label": "Splayed extraocular muscles and optic nerve (labeled A–I, a)"
+    },
+    "2": {
+      "ulx": 233,
+      "uly": 785,
+      "lrx": 418,
+      "lry": 966,
+      "label": "Crystalline humor with aranea membrane (labeled B)"
+    },
+    "3": {
+      "ulx": 257,
+      "uly": 1094,
+      "lrx": 384,
+      "lry": 1217,
+      "label": "Crystalline humor alone (labeled D)"
+    },
+    "4": {
+      "ulx": 941,
+      "uly": 895,
+      "lrx": 1118,
+      "lry": 1049,
+      "label": "Vitreous and crystalline humor (labeled C)"
+    },
+    "5": {
+      "ulx": 398,
+      "uly": 670,
+      "lrx": 876,
+      "lry": 1722,
+      "label": "Layered anatomical flap diagram of the eye (first flap lifted, labeled K, I, H)"
+    }
+  },
+  "729": {
+    "0": {
+      "ulx": 108,
+      "uly": 96,
+      "lrx": 506,
+      "lry": 958,
+      "label": "Eye with extraocular muscles (labeled A)"
+    },
+    "1": {
+      "ulx": 564,
+      "uly": 80,
+      "lrx": 1253,
+      "lry": 836,
+      "label": "Splayed extraocular muscles and optic nerve (labeled A–I, a)"
+    },
+    "2": {
+      "ulx": 233,
+      "uly": 784,
+      "lrx": 418,
+      "lry": 964,
+      "label": "Crystalline humor with aranea membrane (labeled B)"
+    },
+    "3": {
+      "ulx": 257,
+      "uly": 1093,
+      "lrx": 384,
+      "lry": 1215,
+      "label": "Crystalline humor alone (labeled D)"
+    },
+    "4": {
+      "ulx": 941,
+      "uly": 894,
+      "lrx": 1118,
+      "lry": 1048,
+      "label": "Vitreous and crystalline humor (labeled C)"
+    },
+    "5": {
+      "ulx": 413,
+      "uly": 669,
+      "lrx": 893,
+      "lry": 1720,
+      "label": "Layered anatomical flap diagram of the eye (both flaps lifted, labeled L, R)"
+    }
+  },
+  "730": {
+    "0": {
+      "ulx": 108,
+      "uly": 96,
+      "lrx": 506,
+      "lry": 954,
+      "label": "Interactive flap diagram and anatomical views of the eye"
+    }
+  },
+  "731": {
+    "0": {
+      "ulx": 1573,
+      "uly": 664,
+      "lrx": 2269,
+      "lry": 860,
+      "label": "Uterine syringe (Mutter-Spritze)"
+    }
+  },
+  "732": {
+    "0": {
+      "ulx": 408,
+      "uly": 469,
+      "lrx": 1901,
+      "lry": 2157,
+      "label": "Detached facial drawing fragment"
+    }
+  },
+  "733": {
+    "0": {
+      "ulx": 79,
+      "uly": 123,
+      "lrx": 1865,
+      "lry": 2250,
+      "label": "Monastic Eye-Remedy Apothecary (Augen-Apotheke)"
+    }
+  },
+  "734": {
+    "0": {
+      "ulx": 161,
+      "uly": 616,
+      "lrx": 2324,
+      "lry": 1764,
+      "label": "Rectal Prolapse (Außfall des Maßdarms)"
+    }
+  },
+  "735": {
+    "0": {
+      "ulx": 192,
+      "uly": 500,
+      "lrx": 1930,
+      "lry": 2559,
+      "label": "Die andre Figur, der bössen augen (No. 6)"
+    }
+  },
+  "747": {
+    "0": {
+      "ulx": 235,
+      "uly": 111,
+      "lrx": 322,
+      "lry": 270,
+      "label": "Watercolor drawing of a single-rooted tooth in the upper header band of the facing verso"
+    },
+    "1": {
+      "ulx": 922,
+      "uly": 104,
+      "lrx": 1070,
+      "lry": 290,
+      "label": "Watercolor drawing of a three-rooted molar tooth in the upper header band of recto 136 (left column)"
+    },
+    "2": {
+      "ulx": 1778,
+      "uly": 1851,
+      "lrx": 2290,
+      "lry": 2428,
+      "label": "Watercolor illustration of a man's head in left profile wearing a striped cap and red collar, holding a brass/wooden tube to his mouth (recto 136, right column)"
+    }
+  },
+  "140": {
+    "0": {
+      "ulx": 889,
+      "uly": 315,
+      "lrx": 5458,
+      "lry": 6647,
+      "label": "Surgical and medical instruments plate"
+    }
+  },
+  "141": {
+    "0": {
+      "ulx": 105,
+      "uly": 171,
+      "lrx": 4801,
+      "lry": 3029,
+      "label": "Sickroom scene"
+    }
+  },
+  "147": {
+    "0": {
+      "ulx": 2561,
+      "uly": 2453,
+      "lrx": 4708,
+      "lry": 4030,
+      "label": "Varicose Veins (Krampfadern) Illustration"
+    }
+  },
+  "149": {
+    "0": {
+      "ulx": 177,
+      "uly": 219,
+      "lrx": 4756,
+      "lry": 4331,
+      "label": "Sickbed Nursing Scene"
+    }
+  },
+  "151": {
+    "0": {
+      "ulx": 71,
+      "uly": 1809,
+      "lrx": 1493,
+      "lry": 3598,
+      "label": "Wie man die khranckhe in fieber mit Essen vnd Trinckhen halten Soll"
+    }
+  },
+  "154": {
+    "0": {
+      "ulx": 907,
+      "uly": 562,
+      "lrx": 1956,
+      "lry": 925,
+      "label": "Illustration 1 (Canvas 154)"
+    },
+    "1": {
+      "ulx": 981,
+      "uly": 4578,
+      "lrx": 1656,
+      "lry": 5496,
+      "label": "Illustration 2 (Canvas 154)"
+    }
+  },
+  "155": {
+    "0": {
+      "ulx": 121,
+      "uly": 240,
+      "lrx": 520,
+      "lry": 788,
+      "label": "Illustration 1 (Canvas 155)"
+    }
+  },
+  "156": {
+    "0": {
+      "ulx": 2440,
+      "uly": 1960,
+      "lrx": 2822,
+      "lry": 2234,
+      "label": "dies Critici. 7. 14. 21. 27. / dies Decretorej. 4. 9. 14. 17. 21. 23. 27."
+    }
+  },
+  "162": {
+    "0": {
+      "ulx": 3979,
+      "uly": 3461,
+      "lrx": 5450,
+      "lry": 4975,
+      "label": "Illustration of the coronal suture on the head (adjacent to 'Volgenter Sÿrup ist sehr khöstlich')"
+    }
+  },
+  "163": {
+    "0": {
+      "ulx": 229,
+      "uly": 1028,
+      "lrx": 2679,
+      "lry": 3947,
+      "label": "Illustration of a patient with petechiae in bed"
+    }
+  },
+  "168": {
+    "0": {
+      "ulx": 879,
+      "uly": 1371,
+      "lrx": 5535,
+      "lry": 5674,
+      "label": "Bedside scene of a fever patient, physician, and grieving woman"
+    }
+  },
+  "170": {
+    "0": {
+      "ulx": 3055,
+      "uly": 2357,
+      "lrx": 4457,
+      "lry": 4043,
+      "label": "Fumigation censer (bottom left)"
+    },
+    "1": {
+      "ulx": 940,
+      "uly": 4852,
+      "lrx": 2120,
+      "lry": 6456,
+      "label": "Man vomiting into a tub (middle right)"
+    }
+  },
+  "179": {
+    "0": {
+      "ulx": 60,
+      "uly": 1576,
+      "lrx": 1497,
+      "lry": 3803,
+      "label": "Portrait of a youth with a cheek swelling"
+    }
+  },
+  "180": {
+    "0": {
+      "ulx": 964,
+      "uly": 171,
+      "lrx": 2077,
+      "lry": 1083,
+      "label": "Human Eye"
+    },
+    "1": {
+      "ulx": 1021,
+      "uly": 5243,
+      "lrx": 2605,
+      "lry": 6647,
+      "label": "Youth with Nosebleed"
+    }
+  },
+  "185": {
+    "0": {
+      "ulx": 177,
+      "uly": 2865,
+      "lrx": 1402,
+      "lry": 4797,
+      "label": "Zu der 11 sagen"
+    }
+  },
+  "191": {
+    "0": {
+      "ulx": 119,
+      "uly": 171,
+      "lrx": 1263,
+      "lry": 1713,
+      "label": "Portrait of a bearded man"
+    }
+  },
+  "193": {
+    "0": {
+      "ulx": 191,
+      "uly": 3920,
+      "lrx": 2317,
+      "lry": 5839,
+      "label": "Illustration 1 (Canvas 193)"
+    }
+  },
+  "198": {
+    "0": {
+      "ulx": 977,
+      "uly": 356,
+      "lrx": 3178,
+      "lry": 2686,
+      "label": "Illustration above 'Von Bluet speiben' (f. 228v, upper left)"
+    }
+  },
+  "200": {
+    "0": {
+      "ulx": 1020,
+      "uly": 1734,
+      "lrx": 3209,
+      "lry": 3687,
+      "label": "Fluß Chatar"
+    }
+  },
+  "202": {
+    "0": {
+      "ulx": 1005,
+      "uly": 3653,
+      "lrx": 3073,
+      "lry": 5894,
+      "label": "Von Großen Durst."
+    }
+  },
+  "203": {
+    "0": {
+      "ulx": 1494,
+      "uly": 219,
+      "lrx": 2438,
+      "lry": 1542,
+      "label": "Illustration 1 (Canvas 203)"
+    }
+  },
+  "204": {
+    "0": {
+      "ulx": 986,
+      "uly": 3824,
+      "lrx": 2695,
+      "lry": 5085,
+      "label": "Illustration 1 (Canvas 204)"
+    }
+  },
+  "207": {
+    "0": {
+      "ulx": 108,
+      "uly": 288,
+      "lrx": 2408,
+      "lry": 3255,
+      "label": "Illustration 1 (Canvas 207)"
+    }
+  },
+  "211": {
+    "0": {
+      "ulx": 179,
+      "uly": 1014,
+      "lrx": 2310,
+      "lry": 3118,
+      "label": "Blank cartouche beneath profile portrait of a man"
+    }
+  },
+  "213": {
+    "0": {
+      "ulx": 2153,
+      "uly": 946,
+      "lrx": 4628,
+      "lry": 1891,
+      "label": "Man lying prostrate in a landscape"
+    }
+  },
+  "214": {
+    "0": {
+      "ulx": 1477,
+      "uly": 363,
+      "lrx": 2913,
+      "lry": 1473,
+      "label": "Illustration 1 (Canvas 214)"
+    }
+  },
+  "219": {
+    "0": {
+      "ulx": 143,
+      "uly": 329,
+      "lrx": 2300,
+      "lry": 1891,
+      "label": "Illustration of a vomiting patient"
+    }
+  },
+  "229": {
+    "0": {
+      "ulx": 71,
+      "uly": 720,
+      "lrx": 1045,
+      "lry": 1549,
+      "label": "Magen (Stomach)"
+    },
+    "1": {
+      "ulx": 148,
+      "uly": 5140,
+      "lrx": 801,
+      "lry": 6270,
+      "label": "Miltz (Spleen)"
+    },
+    "2": {
+      "ulx": 2291,
+      "uly": 1275,
+      "lrx": 3502,
+      "lry": 2111,
+      "label": "Ritzel (Pancreas)"
+    },
+    "3": {
+      "ulx": 2303,
+      "uly": 3618,
+      "lrx": 3442,
+      "lry": 5037,
+      "label": "Gekröß / Mesenterio (Mesentery)"
+    }
+  },
+  "230": {
+    "0": {
+      "ulx": 1026,
+      "uly": 432,
+      "lrx": 2207,
+      "lry": 1247,
+      "label": "Därm (Intestines)"
+    },
+    "1": {
+      "ulx": 1037,
+      "uly": 3906,
+      "lrx": 2121,
+      "lry": 4825,
+      "label": "das Nötz / omentum (Omentum)"
+    },
+    "2": {
+      "ulx": 1095,
+      "uly": 5798,
+      "lrx": 2052,
+      "lry": 6675,
+      "label": "Peritonea (Peritoneum)"
+    },
+    "3": {
+      "ulx": 3331,
+      "uly": 2207,
+      "lrx": 5371,
+      "lry": 6689,
+      "label": "Figur Und Verzaichnus der Bluet adern (Bloodletting Man / Aderlassmann)"
+    }
+  },
+  "233": {
+    "0": {
+      "ulx": 59,
+      "uly": 274,
+      "lrx": 1732,
+      "lry": 5099,
+      "label": "114 / Vena Pulsatilis Arteria"
+    }
+  },
+  "237": {
+    "0": {
+      "ulx": 2326,
+      "uly": 329,
+      "lrx": 4509,
+      "lry": 1946,
+      "label": "Physician inspecting a urine flask (uroscopy)"
+    }
+  },
+  "238": {
+    "0": {
+      "ulx": 3643,
+      "uly": 329,
+      "lrx": 5401,
+      "lry": 5633,
+      "label": "Figur der Vena Caua. oder Bluet ader Samen"
+    }
+  },
+  "240": {
+    "0": {
+      "ulx": 1125,
+      "uly": 288,
+      "lrx": 3519,
+      "lry": 1549,
+      "label": "Von ader lasen. Wan Man Lasen Soll"
+    }
+  },
+  "241": {
+    "0": {
+      "ulx": 154,
+      "uly": 260,
+      "lrx": 2297,
+      "lry": 2097,
+      "label": "Human figure surrounded by the four elemental symbols"
+    }
+  },
+  "243": {
+    "0": {
+      "ulx": 147,
+      "uly": 2782,
+      "lrx": 2393,
+      "lry": 4735,
+      "label": "Portrait of a sanguine person"
+    }
+  },
+  "244": {
+    "0": {
+      "ulx": 3215,
+      "uly": 4311,
+      "lrx": 5546,
+      "lry": 6072,
+      "label": "Illustration on canvas 244"
+    }
+  },
+  "245": {
+    "0": {
+      "ulx": 2199,
+      "uly": 4201,
+      "lrx": 4580,
+      "lry": 5962,
+      "label": "Illustration on canvas 245"
+    }
+  },
+  "247": {
+    "0": {
+      "ulx": 2211,
+      "uly": 212,
+      "lrx": 4612,
+      "lry": 1967,
+      "label": "Von der Complexion der Melancholia."
+    }
+  },
+  "252": {
+    "0": {
+      "ulx": 4219,
+      "uly": 857,
+      "lrx": 4801,
+      "lry": 1521,
+      "label": "Drawing of a handled flask (matula)"
+    }
+  },
+  "254": {
+    "0": {
+      "ulx": 3339,
+      "uly": 219,
+      "lrx": 5560,
+      "lry": 2357,
+      "label": "Figure of the Natural Spirits (Spiritus Naturales)"
+    },
+    "1": {
+      "ulx": 3339,
+      "uly": 3317,
+      "lrx": 5560,
+      "lry": 5510,
+      "label": "Figure of the Vital Spirits (Spiritus Vitales)"
+    }
+  },
+  "255": {
+    "0": {
+      "ulx": 2166,
+      "uly": 260,
+      "lrx": 4478,
+      "lry": 2145,
+      "label": "Figure of the Animal Spirits (Spiritus Animales)"
+    }
+  },
+  "256": {
+    "0": {
+      "ulx": 3379,
+      "uly": 240,
+      "lrx": 5600,
+      "lry": 2357,
+      "label": "Full-length anatomical figure with outstretched arms"
+    }
+  },
+  "258": {
+    "0": {
+      "ulx": 3320,
+      "uly": 233,
+      "lrx": 5582,
+      "lry": 3098,
+      "label": "Portrait bust of a curly-haired youth"
+    }
+  },
+  "263": {
+    "0": {
+      "ulx": 2590,
+      "uly": 4078,
+      "lrx": 3004,
+      "lry": 4626,
+      "label": "Two hourglass symbols"
+    }
+  },
+  "264": {
+    "0": {
+      "ulx": 1840,
+      "uly": 274,
+      "lrx": 4894,
+      "lry": 3303,
+      "label": "Upper 24-hour planetary and zodiacal wheel"
+    },
+    "1": {
+      "ulx": 1810,
+      "uly": 3303,
+      "lrx": 4976,
+      "lry": 6551,
+      "label": "Lower 24-hour planetary and zodiacal wheel"
+    }
+  },
+  "265": {
+    "0": {
+      "ulx": 142,
+      "uly": 363,
+      "lrx": 2387,
+      "lry": 2604,
+      "label": "Melancolia. hipocontrica."
+    }
+  },
+  "268": {
+    "0": {
+      "ulx": 3312,
+      "uly": 2755,
+      "lrx": 5335,
+      "lry": 3495,
+      "label": "Four apothecary or drinking vessels on a shelf"
+    }
+  },
+  "273": {
+    "0": {
+      "ulx": 178,
+      "uly": 226,
+      "lrx": 1210,
+      "lry": 781,
+      "label": "Three red-filled vessels on a tray"
+    }
+  },
+  "275": {
+    "0": {
+      "ulx": 200,
+      "uly": 288,
+      "lrx": 1444,
+      "lry": 1398,
+      "label": "Illustration on canvas 275"
+    }
+  },
+  "279": {
+    "0": {
+      "ulx": 365,
+      "uly": 3180,
+      "lrx": 2120,
+      "lry": 4454,
+      "label": "Anatomical illustration of the liver and gallbladder"
+    }
+  },
+  "282": {
+    "0": {
+      "ulx": 3434,
+      "uly": 3605,
+      "lrx": 5602,
+      "lry": 5174,
+      "label": "Illustration on canvas 282"
+    }
+  },
+  "283": {
+    "0": {
+      "ulx": 2270,
+      "uly": 637,
+      "lrx": 4506,
+      "lry": 1850,
+      "label": "Emblematic symbol above 'Wie man den Stachel Wein macht'"
+    }
+  },
+  "285": {
+    "0": {
+      "ulx": 2256,
+      "uly": 781,
+      "lrx": 4500,
+      "lry": 1933,
+      "label": "Apothecary vessels on a shelf"
+    }
+  },
+  "286": {
+    "0": {
+      "ulx": 3279,
+      "uly": 569,
+      "lrx": 5505,
+      "lry": 1850,
+      "label": "Illustration on canvas 286"
+    }
+  },
+  "287": {
+    "0": {
+      "ulx": 2289,
+      "uly": 4201,
+      "lrx": 4519,
+      "lry": 5181,
+      "label": "Illustration on canvas 287"
+    }
+  },
+  "288": {
+    "0": {
+      "ulx": 1113,
+      "uly": 980,
+      "lrx": 3357,
+      "lry": 2159,
+      "label": "Illustration on canvas 288"
+    }
+  },
+  "289": {
+    "0": {
+      "ulx": 117,
+      "uly": 5496,
+      "lrx": 760,
+      "lry": 6181,
+      "label": "Apothecary vessel / mortar"
+    }
+  },
+  "290": {
+    "0": {
+      "ulx": 3415,
+      "uly": 3632,
+      "lrx": 5662,
+      "lry": 4989,
+      "label": "Patient suffering from belly flux"
+    }
+  },
+  "291": {
+    "0": {
+      "ulx": 2242,
+      "uly": 2590,
+      "lrx": 4548,
+      "lry": 3324,
+      "label": "Shelf of five apothecary jars"
+    }
+  },
+  "292": {
+    "0": {
+      "ulx": 3396,
+      "uly": 4578,
+      "lrx": 5669,
+      "lry": 6181,
+      "label": "Disenteria. Rotte Ruehr."
+    }
+  },
+  "295": {
+    "0": {
+      "ulx": 2206,
+      "uly": 2570,
+      "lrx": 4577,
+      "lry": 3468,
+      "label": "Clyster syringe and bladder"
+    }
+  },
+  "297": {
+    "0": {
+      "ulx": 118,
+      "uly": 514,
+      "lrx": 2353,
+      "lry": 1960,
+      "label": "Man squatting with rectal prolapse"
+    },
+    "1": {
+      "ulx": 2235,
+      "uly": 3872,
+      "lrx": 4588,
+      "lry": 5373,
+      "label": "Man hunched with colic pain"
+    }
+  },
+  "299": {
+    "0": {
+      "ulx": 128,
+      "uly": 1508,
+      "lrx": 2309,
+      "lry": 1933,
+      "label": "Suppository illustration (abriß)"
+    }
+  },
+  "303": {
+    "0": {
+      "ulx": 130,
+      "uly": 82,
+      "lrx": 2402,
+      "lry": 2124,
+      "label": "Von der Gelbsucht (On Jaundice)"
+    }
+  },
+  "304": {
+    "0": {
+      "ulx": 1230,
+      "uly": 3920,
+      "lrx": 3655,
+      "lry": 5839,
+      "label": "Von der Waser sucht"
+    }
+  },
+  "309": {
+    "0": {
+      "ulx": 2311,
+      "uly": 2241,
+      "lrx": 3454,
+      "lry": 3714,
+      "label": "Painted tree illustration"
+    }
+  },
+  "310": {
+    "0": {
+      "ulx": 3500,
+      "uly": 274,
+      "lrx": 5565,
+      "lry": 2172,
+      "label": "Patient with Wind-Dropsy (Tympanites)"
+    }
+  },
+  "312": {
+    "0": {
+      "ulx": 1356,
+      "uly": 2378,
+      "lrx": 2193,
+      "lry": 3379,
+      "label": "Apothecary Jar"
+    }
+  },
+  "314": {
+    "0": {
+      "ulx": 3477,
+      "uly": 2316,
+      "lrx": 5488,
+      "lry": 3838,
+      "label": "Anatomical diagram of the kidneys and urinary vessels"
+    }
+  },
+  "322": {
+    "0": {
+      "ulx": 1180,
+      "uly": 240,
+      "lrx": 5734,
+      "lry": 6613,
+      "label": "Illustration on canvas 322"
+    }
+  },
+  "324": {
+    "0": {
+      "ulx": 1560,
+      "uly": 3050,
+      "lrx": 1875,
+      "lry": 3495,
+      "label": "Illustration on canvas 324"
+    }
+  },
+  "333": {
+    "0": {
+      "ulx": 3845,
+      "uly": 466,
+      "lrx": 4498,
+      "lry": 788,
+      "label": "Marginal pointing hand / flourish"
+    }
+  },
+  "337": {
+    "0": {
+      "ulx": 146,
+      "uly": 994,
+      "lrx": 1347,
+      "lry": 2508,
+      "label": "Illustration of Mistletoe Tree"
+    }
+  },
+  "339": {
+    "0": {
+      "ulx": 2386,
+      "uly": 1590,
+      "lrx": 4642,
+      "lry": 4420,
+      "label": "Illustration of Stillicidium (Head-Dripping Bath Therapy)"
+    }
+  },
+  "342": {
+    "0": {
+      "ulx": 1177,
+      "uly": 219,
+      "lrx": 5735,
+      "lry": 6565,
+      "label": "Apothecary and Alchemical Workshop"
+    }
+  },
+  "343": {
+    "0": {
+      "ulx": 129,
+      "uly": 4989,
+      "lrx": 2470,
+      "lry": 6613,
+      "label": "169"
+    }
+  },
+  "349": {
+    "0": {
+      "ulx": 162,
+      "uly": 3598,
+      "lrx": 2432,
+      "lry": 4331,
+      "label": "Clyster syringe"
+    }
+  },
+  "351": {
+    "0": {
+      "ulx": 128,
+      "uly": 959,
+      "lrx": 2458,
+      "lry": 3029,
+      "label": "Two pots boiling over a hearth fire with an attendant carrying a jug"
+    }
+  },
+  "353": {
+    "0": {
+      "ulx": 128,
+      "uly": 1268,
+      "lrx": 2476,
+      "lry": 2070,
+      "label": "Three apothecary vessels on a wooden shelf (Left Column)"
+    },
+    "1": {
+      "ulx": 2359,
+      "uly": 2275,
+      "lrx": 4590,
+      "lry": 3139,
+      "label": "Goblet with red wine and cylindrical jar on a shelf (Right Column)"
+    }
+  },
+  "355": {
+    "0": {
+      "ulx": 2218,
+      "uly": 82,
+      "lrx": 4588,
+      "lry": 3111,
+      "label": "Apothecary Shop Scene"
+    }
+  },
+  "358": {
+    "0": {
+      "ulx": 1504,
+      "uly": 692,
+      "lrx": 2220,
+      "lry": 1610,
+      "label": "1. Myrobalanj Bellerica."
+    },
+    "1": {
+      "ulx": 1539,
+      "uly": 2632,
+      "lrx": 2202,
+      "lry": 3276,
+      "label": "2. Myrobalanj Emplicj."
+    },
+    "2": {
+      "ulx": 1456,
+      "uly": 4256,
+      "lrx": 2112,
+      "lry": 5229,
+      "label": "3. Myrobalanj Chebula."
+    },
+    "3": {
+      "ulx": 1522,
+      "uly": 5524,
+      "lrx": 2041,
+      "lry": 6270,
+      "label": "4. Myrobalanj Indica."
+    },
+    "4": {
+      "ulx": 3861,
+      "uly": 1103,
+      "lrx": 4720,
+      "lry": 2214,
+      "label": "5. Myrobalanj Citrinj."
+    }
+  },
+  "364": {
+    "0": {
+      "ulx": 1358,
+      "uly": 4153,
+      "lrx": 3621,
+      "lry": 4941,
+      "label": "Illustration on canvas 364"
+    }
+  },
+  "368": {
+    "0": {
+      "ulx": 1380,
+      "uly": 226,
+      "lrx": 3659,
+      "lry": 1199,
+      "label": "Four apothecary jars on a shelf"
+    }
+  },
+  "370": {
+    "0": {
+      "ulx": 1387,
+      "uly": 2378,
+      "lrx": 3678,
+      "lry": 3584,
+      "label": "Leaping stag"
+    }
+  },
+  "371": {
+    "0": {
+      "ulx": 180,
+      "uly": 1083,
+      "lrx": 2381,
+      "lry": 2508,
+      "label": "Distillation apparatus and furnace"
+    }
+  },
+  "373": {
+    "0": {
+      "ulx": 200,
+      "uly": 103,
+      "lrx": 2461,
+      "lry": 1878,
+      "label": "Apothecary grinding a substance on a stone slab"
+    }
+  },
+  "376": {
+    "0": {
+      "ulx": 1445,
+      "uly": 624,
+      "lrx": 3706,
+      "lry": 2296,
+      "label": "Distillation apparatus"
+    }
+  },
+  "377": {
+    "0": {
+      "ulx": 2220,
+      "uly": 4126,
+      "lrx": 3148,
+      "lry": 5195,
+      "label": "Rose plant (Rosa)"
+    }
+  },
+  "378": {
+    "0": {
+      "ulx": 1586,
+      "uly": 2309,
+      "lrx": 2617,
+      "lry": 3728,
+      "label": "Black hellebore (Helleborus niger / Schwarze Nieswurz)"
+    }
+  },
+  "379": {
+    "0": {
+      "ulx": 224,
+      "uly": 452,
+      "lrx": 1615,
+      "lry": 2364,
+      "label": "Bryonia (Prijonia) root"
+    }
+  },
+  "381": {
+    "0": {
+      "ulx": 151,
+      "uly": 288,
+      "lrx": 4518,
+      "lry": 6620,
+      "label": "Apothecary's workshop with monk"
+    }
+  },
+  "382": {
+    "0": {
+      "ulx": 3579,
+      "uly": 1453,
+      "lrx": 5833,
+      "lry": 2974,
+      "label": "Distillation vessel (gläßl) for separating essential oils from water"
+    }
+  },
+  "387": {
+    "0": {
+      "ulx": 2310,
+      "uly": 1713,
+      "lrx": 3691,
+      "lry": 3166,
+      "label": "Wie Man den Terpenthin Leütern sol (Turpentine Purification Vessel)"
+    }
+  },
+  "389": {
+    "0": {
+      "ulx": 604,
+      "uly": 1007,
+      "lrx": 1370,
+      "lry": 1535,
+      "label": "Rose blossom (Rosen Tinctur / Rosen Hönig)"
+    },
+    "1": {
+      "ulx": 2217,
+      "uly": 3495,
+      "lrx": 3609,
+      "lry": 5003,
+      "label": "Elder tree (Von Blusen Khraft vnd Dugent des gemainen hollers)"
+    }
+  },
+  "390": {
+    "0": {
+      "ulx": 4325,
+      "uly": 987,
+      "lrx": 5072,
+      "lry": 1467,
+      "label": "Nettle sprig (Das khain har Wachse)"
+    },
+    "1": {
+      "ulx": 3566,
+      "uly": 5153,
+      "lrx": 5084,
+      "lry": 5962,
+      "label": "Inkstand with quill pen (Guette Dintten Machen)"
+    }
+  },
+  "393": {
+    "0": {
+      "ulx": 2185,
+      "uly": 219,
+      "lrx": 2964,
+      "lry": 1357,
+      "label": "Arum maculatum (Lords-and-Ladies / Cuckoo-pint)"
+    },
+    "1": {
+      "ulx": 996,
+      "uly": 2570,
+      "lrx": 1277,
+      "lry": 2865,
+      "label": "Red-ink heart ornaments"
+    },
+    "2": {
+      "ulx": 873,
+      "uly": 3865,
+      "lrx": 1172,
+      "lry": 4194,
+      "label": "Red-ink wheel emblem"
+    }
+  },
+  "394": {
+    "0": {
+      "ulx": 2773,
+      "uly": 2111,
+      "lrx": 3708,
+      "lry": 3111,
+      "label": "Bust portrait of a young man in profile"
+    }
+  },
+  "395": {
+    "0": {
+      "ulx": 2255,
+      "uly": 240,
+      "lrx": 4649,
+      "lry": 1850,
+      "label": "Soap-boiler at a furnace with a wooden lye tub"
+    }
+  },
+  "398": {
+    "0": {
+      "ulx": 3639,
+      "uly": 2433,
+      "lrx": 5320,
+      "lry": 3858,
+      "label": "Portrait bust illustrating Erbgrind (tinea capitis / scabby head)"
+    }
+  },
+  "399": {
+    "0": {
+      "ulx": 1128,
+      "uly": 3666,
+      "lrx": 1591,
+      "lry": 4215,
+      "label": "Small fluted vessel above Gall Tränckel"
+    }
+  },
+  "402": {
+    "0": {
+      "ulx": 3440,
+      "uly": 1919,
+      "lrx": 4328,
+      "lry": 2686,
+      "label": "Tutia Alexandrina"
+    }
+  },
+  "403": {
+    "0": {
+      "ulx": 2329,
+      "uly": 2981,
+      "lrx": 4413,
+      "lry": 3701,
+      "label": "Two facing hands"
+    }
+  },
+  "404": {
+    "0": {
+      "ulx": 1776,
+      "uly": 4098,
+      "lrx": 3284,
+      "lry": 4701,
+      "label": "Würm"
+    }
+  },
+  "405": {
+    "0": {
+      "ulx": 104,
+      "uly": 315,
+      "lrx": 1010,
+      "lry": 1179,
+      "label": "Alchemical retort and flask"
+    },
+    "1": {
+      "ulx": 1489,
+      "uly": 370,
+      "lrx": 2221,
+      "lry": 1268,
+      "label": "Smoking pipe"
+    }
+  },
+  "407": {
+    "0": {
+      "ulx": 2163,
+      "uly": 939,
+      "lrx": 4447,
+      "lry": 2145,
+      "label": "Amputated human leg and foot"
+    }
+  },
+  "409": {
+    "0": {
+      "ulx": 2192,
+      "uly": 3714,
+      "lrx": 4522,
+      "lry": 5105,
+      "label": "Fumigation brazier and box"
+    }
+  },
+  "410": {
+    "0": {
+      "ulx": 2459,
+      "uly": 1919,
+      "lrx": 3734,
+      "lry": 2385,
+      "label": "Nasal suppository / rolled medicated plug"
+    }
+  },
+  "415": {
+    "0": {
+      "ulx": 871,
+      "uly": 2810,
+      "lrx": 1627,
+      "lry": 3289,
+      "label": "Crayfish / Crab Illustration (Cancer Symbol)"
+    }
+  },
+  "417": {
+    "0": {
+      "ulx": 104,
+      "uly": 260,
+      "lrx": 2273,
+      "lry": 2275,
+      "label": "Seated Man at a Low Table with Basin"
+    }
+  },
+  "420": {
+    "0": {
+      "ulx": 3427,
+      "uly": 1795,
+      "lrx": 5760,
+      "lry": 3235,
+      "label": "Reclining patient figure (Right Column, middle)"
+    }
+  },
+  "421": {
+    "0": {
+      "ulx": 2209,
+      "uly": 1425,
+      "lrx": 4470,
+      "lry": 4996,
+      "label": "Surgical instruments for exploring and cutting fistulas (two curved grooved directors/syringotomes, a bulbous probe, and a curved bistoury)"
+    }
+  },
+  "423": {
+    "0": {
+      "ulx": 174,
+      "uly": 2673,
+      "lrx": 2251,
+      "lry": 4427,
+      "label": "Anatomical diagram showing fontanel (issue) placement sites on the human body"
+    }
+  },
+  "425": {
+    "0": {
+      "ulx": 150,
+      "uly": 302,
+      "lrx": 1287,
+      "lry": 2207,
+      "label": "Von Stain sandt Vnd Jrieß"
+    }
+  },
+  "427": {
+    "0": {
+      "ulx": 2177,
+      "uly": 2782,
+      "lrx": 4481,
+      "lry": 3687,
+      "label": "Urine jug/flask and handled chamber pot on a wooden table"
+    }
+  },
+  "428": {
+    "0": {
+      "ulx": 3421,
+      "uly": 2501,
+      "lrx": 4618,
+      "lry": 3714,
+      "label": "Urine flask (matula) on a wooden table with red urine symbol (⊡)"
+    }
+  },
+  "433": {
+    "0": {
+      "ulx": 2160,
+      "uly": 1768,
+      "lrx": 3666,
+      "lry": 2323,
+      "label": "Blank pasted label under 'Gonorrchea'"
+    }
+  },
+  "435": {
+    "0": {
+      "ulx": 2170,
+      "uly": 2782,
+      "lrx": 3250,
+      "lry": 4153,
+      "label": "Anatomical diagram of the urinary bladder and urethra"
+    }
+  },
+  "436": {
+    "0": {
+      "ulx": 3563,
+      "uly": 2755,
+      "lrx": 4689,
+      "lry": 3721,
+      "label": "Anatomical illustration of the urinary bladder"
+    }
+  },
+  "438": {
+    "0": {
+      "ulx": 3620,
+      "uly": 4523,
+      "lrx": 5818,
+      "lry": 5153,
+      "label": "Anatomical diagram of a urethral caruncle / bladder neck obstruction"
+    }
+  },
+  "441": {
+    "0": {
+      "ulx": 174,
+      "uly": 219,
+      "lrx": 1825,
+      "lry": 2981,
+      "label": "Anatomical figure of a standing man wearing a hernia truss"
+    }
+  },
+  "444": {
+    "0": {
+      "ulx": 3445,
+      "uly": 5249,
+      "lrx": 3945,
+      "lry": 5798,
+      "label": "Unlabeled oval red-ink anatomical/hernia diagram"
+    }
+  },
+  "446": {
+    "0": {
+      "ulx": 3493,
+      "uly": 809,
+      "lrx": 5893,
+      "lry": 2967,
+      "label": "(Unlabeled anatomical/surgical illustration showing a man with tumors)"
+    }
+  },
+  "447": {
+    "0": {
+      "ulx": 2224,
+      "uly": 233,
+      "lrx": 4748,
+      "lry": 1946,
+      "label": "(Unlabeled anatomical/surgical illustration showing a woman with a shoulder tumor)"
+    }
+  },
+  "449": {
+    "0": {
+      "ulx": 185,
+      "uly": 219,
+      "lrx": 2452,
+      "lry": 2124,
+      "label": "Kitchen/laboratory scene illustrating scalding and burns"
+    }
+  },
+  "450": {
+    "0": {
+      "ulx": 1114,
+      "uly": 178,
+      "lrx": 3542,
+      "lry": 1672,
+      "label": "Sympathetic healing and transplantation through a tree"
+    }
+  },
+  "453": {
+    "0": {
+      "ulx": 144,
+      "uly": 219,
+      "lrx": 1393,
+      "lry": 1878,
+      "label": "Cichori Fluët. Ein herliche Reinigung des geblüets."
+    },
+    "1": {
+      "ulx": 144,
+      "uly": 3714,
+      "lrx": 2349,
+      "lry": 5345,
+      "label": "Puluis Simpateticus, Wie es gemacht Und Gebraucht Wirdt."
+    }
+  },
+  "455": {
+    "0": {
+      "ulx": 2328,
+      "uly": 3098,
+      "lrx": 4789,
+      "lry": 5071,
+      "label": "Transplantation of disease into a dog and a tree"
+    }
+  },
+  "456": {
+    "0": {
+      "ulx": 3458,
+      "uly": 3550,
+      "lrx": 5761,
+      "lry": 5140,
+      "label": "Four flowering wound-herbs (Wundkräuter)"
+    }
+  },
+  "458": {
+    "0": {
+      "ulx": 3419,
+      "uly": 1837,
+      "lrx": 4409,
+      "lry": 2906,
+      "label": "Fluted glass flask (right column, beside 'Hundt Leben Machen')"
+    }
+  },
+  "460": {
+    "0": {
+      "ulx": 1435,
+      "uly": 2145,
+      "lrx": 2028,
+      "lry": 2536,
+      "label": "Maill Khugl"
+    }
+  },
+  "461": {
+    "0": {
+      "ulx": 103,
+      "uly": 946,
+      "lrx": 2285,
+      "lry": 4167,
+      "label": "Von der Glider Sucht. Arthritis"
+    }
+  }
+}

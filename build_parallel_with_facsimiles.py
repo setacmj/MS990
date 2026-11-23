@@ -196,12 +196,21 @@ def generate_html(data: dict):
     total_figs = sum(len(p.get("figures", [])) for p in pages)
 
     # Pre-render page options for fast switching
-    page_options = []
+    page_options = [
+        '<option value="landing">Overview &amp; Summary (Landing Page)</option>',
+        '<option value="index">Index: Ingredients, People, Places &amp; Terms</option>',
+        f'<option value="figures">Figures &amp; Diagrams ({total_figs})</option>',
+    ]
+    cnum_to_idx = {}
     for idx, p in enumerate(pages):
         cnum = p["canvas_num"]
+        cnum_to_idx[cnum] = idx
         op = p["orig_page"]
         fs = p.get("folio_side", "")
         page_options.append(f'<option value="{idx}">Page {op} (Canvas #{cnum} {fs})</option>')
+
+    entity_path = Path("MS990_entity_index.json")
+    entities = json.loads(entity_path.read_text(encoding="utf-8")) if entity_path.exists() else []
 
     html_content = f"""<!DOCTYPE html>
 <html lang="en">
@@ -564,6 +573,26 @@ def generate_html(data: dict):
       margin: 0;
       font-size: 1.05rem;
     }}
+    .search-dialog-bar {{
+      padding: 0.75rem 1.2rem;
+      background: #f8f3e8;
+      border-bottom: 1px solid #dfd3be;
+    }}
+    .search-dialog-bar form {{
+      display: flex;
+      gap: 0.5rem;
+      width: 100%;
+    }}
+    .search-dialog-bar input[type="search"] {{
+      flex: 1;
+      font: inherit;
+      font-size: max(1rem, 1em);
+      padding: 0.5rem 0.75rem;
+      border: 1px solid #b5a387;
+      border-radius: 5px;
+      background: #ffffff;
+      color: #2b231b;
+    }}
     .search-dialog-meta {{
       padding: 0.6rem 1.2rem;
       background: #f2eadc;
@@ -625,20 +654,245 @@ def generate_html(data: dict):
       background: #fef3c7 !important;
       outline: 2px solid #b45309;
     }}
+    .landing-wrap {{
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }}
+    .landing-hero {{
+      background: #ffffff;
+      border: 1px solid #dfd3be;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-bottom: 1.75rem;
+      box-shadow: 0 4px 18px rgba(43, 35, 27, 0.06);
+    }}
+    .landing-hero h2 {{
+      font-family: 'Cinzel', serif;
+      font-size: 1.75rem;
+      color: #2b231b;
+      margin: 0 0 0.75rem;
+    }}
+    .landing-hero p {{
+      font-size: 1rem;
+      line-height: 1.65;
+      color: #3d3328;
+      margin: 0 0 1rem;
+    }}
+    .landing-stats {{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 1rem 0 1.4rem;
+    }}
+    .landing-actions {{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }}
+    .btn-primary {{
+      background: #7c3f1d;
+      color: #fdfaf3;
+      border: 1px solid #5e2e14;
+      padding: 0.6rem 1.1rem;
+      border-radius: 5px;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+    }}
+    .btn-primary:hover {{
+      background: #5e2e14;
+    }}
+    .landing-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }}
+    .section-card {{
+      background: #ffffff;
+      border: 1px solid #dfd3be;
+      border-radius: 8px;
+      padding: 1.1rem 1.2rem;
+      text-align: left;
+      cursor: pointer;
+      font: inherit;
+      color: #2b231b;
+      transition: border-color 0.15s, transform 0.15s;
+    }}
+    .section-card:hover,
+    .section-card:focus-visible {{
+      border-color: #7c3f1d;
+      transform: translateY(-2px);
+      outline: 2px solid #7c3f1d;
+      outline-offset: 2px;
+    }}
+    .section-card h3 {{
+      margin: 0 0 0.35rem;
+      font-size: 1rem;
+      color: #7c3f1d;
+    }}
+    .section-card p {{
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.45;
+      color: #4a3f32;
+    }}
+    .index-controls {{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+      padding: 1rem;
+      background: #ffffff;
+      border: 1px solid #dfd3be;
+      border-radius: 8px;
+    }}
+    .cat-btn {{
+      background: #f2eadc;
+      color: #2b231b;
+      border: 1px solid #cbbba2;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }}
+    .cat-btn.active {{
+      background: #7c3f1d;
+      color: #fdfaf3;
+      border-color: #5e2e14;
+    }}
+    .index-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 1rem;
+    }}
+    .entity-card {{
+      background: #ffffff;
+      border: 1px solid #dfd3be;
+      border-radius: 8px;
+      padding: 1rem 1.1rem;
+    }}
+    .entity-head {{
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+    }}
+    .entity-name {{
+      font-weight: 700;
+      font-size: 1rem;
+      color: #2b231b;
+    }}
+    .entity-wd {{
+      display: inline-block;
+      font-size: 0.78rem;
+      color: #1d4ed8;
+      text-decoration: none;
+      margin-bottom: 0.4rem;
+    }}
+    .entity-wd:hover {{
+      text-decoration: underline;
+    }}
+    .entity-desc {{
+      font-size: 0.82rem;
+      color: #5a4d3f;
+      margin: 0 0 0.6rem;
+    }}
+    .entity-pages {{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }}
+    .page-chip {{
+      background: #f2eadc;
+      border: 1px solid #d4c6af;
+      color: #2b231b;
+      border-radius: 4px;
+      padding: 0.18rem 0.45rem;
+      font-size: 0.75rem;
+      cursor: pointer;
+      font-family: inherit;
+    }}
+    .page-chip:hover {{
+      background: #e2d7c3;
+      border-color: #7c3f1d;
+    }}
+    .figures-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.1rem;
+    }}
+    .figure-card {{
+      background: #ffffff;
+      border: 1px solid #dfd3be;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }}
+    .figure-thumb-wrap {{
+      background: #f2eadc;
+      border-bottom: 1px solid #dfd3be;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 200px;
+      max-height: 280px;
+      overflow: hidden;
+    }}
+    .figure-thumb-wrap img {{
+      width: 100%;
+      height: 240px;
+      object-fit: contain;
+      display: block;
+    }}
+    .figure-body {{
+      padding: 0.9rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      flex: 1;
+    }}
+    .figure-body h3 {{
+      margin: 0;
+      font-size: 0.96rem;
+      color: #2b231b;
+    }}
+    .figure-body p {{
+      margin: 0;
+      font-size: 0.83rem;
+      line-height: 1.45;
+      color: #4a3f32;
+      flex: 1;
+    }}
+    .figure-foot {{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-top: 0.4rem;
+    }}
   </style>
 </head>
 <body>
   <header>
     <div class="header-titles">
-      <h1>Wellcome MS.990 · Illustrated Critical Edition</h1>
-      <p>Early New High German Medical &amp; Surgical Compendium (c. 1675) · {total_pages} Canvases · {total_lines:,} Lines</p>
+      <h1>Wellcome MS.990 · Parallel Critical Edition</h1>
+      <p>Austro-Bavarian Medical &amp; Surgical Compendium (ca. 1650–1680) · {total_pages} Canvases · {total_lines:,} Lines</p>
     </div>
     <div class="nav-controls">
+      <button type="button" class="btn-secondary" id="btn-home" onclick="showLanding()">Overview</button>
+      <button type="button" class="btn-secondary" id="btn-index" onclick="showIndex()">Index</button>
+      <button type="button" class="btn-secondary" id="btn-figures" onclick="showFigures()">Figures ({total_figs})</button>
       <button type="button" class="btn-secondary" id="btn-prev" onclick="changePage(-1)">&#9664; Prev</button>
       <select id="page-select" aria-label="Select manuscript page" onchange="jumpToPage(this.value)">
         {''.join(page_options)}
       </select>
-      <button type="button" class="btn-secondary" id="btn-next" onclick="jumpToPage(currentIndex + 1)">Next &#9654;</button>
+      <button type="button" class="btn-secondary" id="btn-next" onclick="changePage(1)">Next &#9654;</button>
       <search>
         <form id="corpus-search-form" action="#" method="GET">
           <label for="filter-input" class="visually-hidden">Search across all pages</label>
@@ -652,6 +906,183 @@ def generate_html(data: dict):
 
   <main id="edition-container">
 """
+
+    # Build Landing Page Card (active by default) — Notable Illustrated Highlights
+    sections_jump = [
+        ("p. 36 (c.13) · Dental Anatomy & Fumigation", 13, "Watercolour study of four human teeth and a profile portrait of a patient using a brass throat-fumigation tube."),
+        ("p. 48 (c.25) · Eye Anatomy Flap Plate (Klappbild)", 25, "Multi-layered anatomical dissection of the eye, extraocular muscles, and seven tunics (flap states on c.727–730)."),
+        ("p. 84 (c.55) · Lacrimal Fistula Surgery", 55, "Operative portrait of a nun after lacrimal fistula incision alongside three illustrated surgical knives and lancets."),
+        ("p. 166 (c.137) · Distillation & Alchemical Furnaces", 137, "Full-page watercolor plate of six serpentine distillation trains, alembics, and receivers (pp. 166–168)."),
+        ("p. 257 (c.230) · Viscera: Intestines & Omentum", 230, "Four anatomical watercolor drawings of the intestines (Därm), omentum (das Nötz), and peritoneum (pp. 254–257)."),
+        ("p. 352 (c.322) · Early Modern Apothecary Interior", 322, "Full-page watercolor scene depicting the interior of an early modern apothecary and alchemical dispensary."),
+        ("p. 393 (c.358) · Illustrated Materia Medica: Myrobalans", 358, "Five botanical watercolor studies of medicinal myrobalans (Bellerica, Emblica, Chebula, Citrine, and Indica)."),
+        ("p. 542 (c.733) · Monastic Eye-Remedy Apothecary", 733, "Full-page watercolor of a friar dispensing eye remedies beneath five labeled shelves to blindfolded patients."),
+        ("p. 765 (c.699) · Limb Amputation Preparation", 699, "Clinical scene showing a seated patient, surgeon, assistants with curved amputation knife, and instrument table."),
+        ("p. 781 (c.705) · Peasants' & Poor People's Apothecary", 705, "Watercolor of two apothecary shelves opening Paurn, Vnd Armer Leüdt apotecken (remedies for the poor)."),
+    ]
+    sec_cards_html = []
+    for stitle, scnum, sdesc in sections_jump:
+        sidx = cnum_to_idx.get(scnum, 0)
+        sec_cards_html.append(
+            f'          <button type="button" class="section-card" onclick="showPage({sidx})">\n'
+            f'            <h3>{html.escape(stitle)}</h3>\n'
+            f'            <p>{html.escape(sdesc)}</p>\n'
+            f'          </button>\n'
+        )
+
+    landing_html = f"""    <section class="page-card active" id="landing-card">
+      <div class="landing-wrap">
+        <div class="landing-hero">
+          <h2>Wellcome Collection MS.990: Parallel German–English Edition</h2>
+          <p>
+            Compiled in an Austro-Bavarian Franciscan milieu around 1650–1680 (and acquired by Henry Wellcome in 1922 from the Viennese firm Gilhofer &amp; Ranschburg), <b>MS.990</b> is a richly illustrated Early New High German (<i>Frühneuhochdeutsch</i>) medical, surgical, and iatrochemical compendium (<i>Arzneibuch</i>). Although the opening 28 pages are wanting, the surviving codex spans <b>{total_pages} digitized canvases</b> across <b>{total_lines:,} aligned lines</b> and <b>{total_figs} catalogued illustrations and diagrams</b>, uniting Galenic humoral pathology, Paracelsian chemical pharmacy, operative surgery, and vernacular charitable medicine.
+          </p>
+          <div class="landing-stats">
+            <span class="badge">{total_pages} Canvases</span>
+            <span class="badge">{total_lines:,} Aligned Lines</span>
+            <span class="badge">{total_figs} Figures &amp; Diagrams</span>
+            <span class="badge">{len(entities)} Indexed Entities (Wikidata-Linked)</span>
+          </div>
+          <div class="landing-actions">
+            <button type="button" class="btn-primary" onclick="showPage(0)">Start Reading Edition &rarr;</button>
+            <button type="button" class="btn-secondary" onclick="showIndex()">Browse Index (Ingredients, People, Places &amp; Terms)</button>
+            <button type="button" class="btn-secondary" onclick="showFigures()">Browse Figures &amp; Diagrams ({total_figs})</button>
+            <button type="button" class="btn-secondary" onclick="openCorpusSearch('')">Search All {total_pages} Pages</button>
+          </div>
+        </div>
+        <div class="landing-grid">
+{''.join(sec_cards_html)}        </div>
+      </div>
+    </section>
+"""
+
+    # Build Entity Index Card (Ingredients, People, Places, Terms linked to Wikidata)
+    entity_cards_html = []
+    for ent in entities:
+        cat = ent.get("category", "Terms")
+        ename = ent.get("name", "")
+        qid = ent.get("qid", "")
+        wdesc = ent.get("wd_desc", "")
+        lhits = ent.get("line_hits", 0)
+        phits = ent.get("page_hits", 0)
+        refs = ent.get("refs", [])
+        chips = []
+        for r in refs[:14]:
+            ridx = r["pIdx"]
+            rop = r.get("orig_page") or f"c.{r['canvas_num']}"
+            chips.append(f'<button type="button" class="page-chip" onclick="showPage({ridx})" title="Canvas #{r["canvas_num"]} ({r["lines"]} hits)">p. {html.escape(str(rop))}</button>')
+        if len(refs) > 14:
+            chips.append(f'<span class="badge">+{len(refs)-14} more pages</span>')
+        wd_link = (
+            f'<a class="entity-wd" href="https://www.wikidata.org/wiki/{html.escape(qid)}" target="_blank" rel="noopener">Wikidata: {html.escape(qid)} &#8599;</a>'
+            if qid else '<span class="entity-desc">No Wikidata link assigned</span>'
+        )
+        desc_p = f'<p class="entity-desc">{html.escape(wdesc)}</p>' if wdesc else ""
+        entity_cards_html.append(
+            f'          <article class="entity-card" data-cat="{html.escape(cat)}" data-name="{html.escape(ename.lower())} {html.escape(wdesc.lower())}">\n'
+            f'            <div class="entity-head"><span class="entity-name">{html.escape(ename)}</span><span class="badge">{html.escape(cat)} &middot; {lhits} lines / {phits} pp.</span></div>\n'
+            f'            {wd_link}\n'
+            f'            {desc_p}\n'
+            f'            <div class="entity-pages">{"".join(chips)}</div>\n'
+            f'          </article>\n'
+        )
+
+    index_html = f"""    <section class="page-card" id="index-card">
+      <div class="landing-wrap">
+        <div class="landing-hero">
+          <h2>Index of Ingredients, People, Places &amp; Terms</h2>
+          <p>Curated entities extracted across all {total_pages} pages of Wellcome MS.990, linked to verified Wikidata identifiers (<code>Q-IDs</code>) and clickable page occurrences.</p>
+        </div>
+        <div class="index-controls">
+          <button type="button" class="cat-btn active" onclick="setIndexCategory('All', this)">All ({len(entities)})</button>
+          <button type="button" class="cat-btn" onclick="setIndexCategory('Ingredients', this)">Ingredients</button>
+          <button type="button" class="cat-btn" onclick="setIndexCategory('People', this)">People</button>
+          <button type="button" class="cat-btn" onclick="setIndexCategory('Places', this)">Places</button>
+          <button type="button" class="cat-btn" onclick="setIndexCategory('Terms', this)">Terms</button>
+          <label for="index-filter" class="visually-hidden">Filter index terms</label>
+          <input type="search" id="index-filter" placeholder="Filter index..." oninput="filterIndex(this.value)" style="margin-left:auto;padding:0.4rem 0.65rem;border:1px solid #cbbba2;border-radius:4px;" />
+        </div>
+        <div class="index-grid" id="index-grid">
+{''.join(entity_cards_html)}        </div>
+      </div>
+    </section>
+"""
+
+    # Build Figures & Diagrams Gallery Card (IIIF region crops where custom bbox exists)
+    fig_cards_html = []
+    cropped_count = 0
+    fullpage_count = 0
+    for pIdx, p in enumerate(pages):
+        cnum = p["canvas_num"]
+        op = p.get("orig_page") or f"c.{cnum}"
+        jp2 = p["jp2"]
+        pw = p.get("width", 2400)
+        crx = (300 + pw - 800) // 2
+        for fg in p.get("figures", []):
+            ulx, uly, lrx, lry = fg.get("ulx"), fg.get("uly"), fg.get("lrx"), fg.get("lry")
+            is_placeholder = (
+                (ulx, uly, lrx, lry) == (400, 400, crx - 50, 1400)
+                or None in (ulx, uly, lrx, lry)
+                or lrx <= ulx
+                or lry <= uly
+            )
+            if is_placeholder:
+                fullpage_count += 1
+                img_url = f"https://iiif.wellcomecollection.org/image/{jp2}/full/600,/0/default.jpg"
+                full_url = f"https://iiif.wellcomecollection.org/image/{jp2}/full/full/0/default.jpg"
+                crop_mode = "full"
+                crop_badge = "Full-page view"
+            else:
+                cropped_count += 1
+                rw, rh = lrx - ulx, lry - uly
+                ph = p.get("height", 3000)
+                px = round(100.0 * ulx / pw, 2)
+                py = round(100.0 * uly / ph, 2)
+                pw_pct = round(100.0 * rw / pw, 2)
+                ph_pct = round(100.0 * rh / ph, 2)
+                pct_region = f"pct:{px},{py},{pw_pct},{ph_pct}"
+                img_url = f"https://iiif.wellcomecollection.org/image/{jp2}/{pct_region}/600,/0/default.jpg"
+                full_url = f"https://iiif.wellcomecollection.org/image/{jp2}/{pct_region}/full/0/default.jpg"
+                crop_mode = "crop"
+                crop_badge = f"IIIF Crop ({px}%,{py}%,{pw_pct}%,{ph_pct}%)"
+            flabel = fg.get("label", "Figure")
+            fdesc = fg.get("desc", "")
+            search_blob = f"{flabel} {fdesc} p. {op} canvas {cnum}".lower()
+            fig_cards_html.append(
+                f'          <article class="figure-card" data-crop="{crop_mode}" data-text="{html.escape(search_blob)}">\n'
+                f'            <a class="figure-thumb-wrap" href="{full_url}" target="_blank" rel="noopener" title="Open full-resolution IIIF image">\n'
+                f'              <img src="{img_url}" alt="{html.escape(flabel)} (Page {html.escape(str(op))}, Canvas #{cnum})" loading="lazy" />\n'
+                f'            </a>\n'
+                f'            <div class="figure-body">\n'
+                f'              <h3>{html.escape(flabel)}</h3>\n'
+                f'              <p>{html.escape(fdesc)}</p>\n'
+                f'              <div class="figure-foot">\n'
+                f'                <span class="badge">p. {html.escape(str(op))} &middot; c.{cnum} &middot; {html.escape(crop_badge)}</span>\n'
+                f'                <button type="button" class="page-chip" onclick="showPage({pIdx})">Go to Page &rarr;</button>\n'
+                f'              </div>\n'
+                f'            </div>\n'
+                f'          </article>\n'
+            )
+
+    figures_html = f"""    <section class="page-card" id="figures-card">
+      <div class="landing-wrap">
+        <div class="landing-hero">
+          <h2>Figures &amp; Diagrams ({total_figs})</h2>
+          <p>All {total_figs} catalogued watercolor illustrations, anatomical diagrams, surgical instruments, and conservation plates across Wellcome MS.990. {cropped_count} figures with recorded pixel coordinates are cropped directly via the Wellcome IIIF Image API; {fullpage_count} figures without tight region coordinates display the full-page thumbnail.</p>
+        </div>
+        <div class="index-controls">
+          <button type="button" class="cat-btn active" onclick="setFigureFilter('all', this)">All ({total_figs})</button>
+          <button type="button" class="cat-btn" onclick="setFigureFilter('crop', this)">IIIF Cropped ({cropped_count})</button>
+          <button type="button" class="cat-btn" onclick="setFigureFilter('full', this)">Full Page ({fullpage_count})</button>
+          <label for="figures-filter" class="visually-hidden">Filter figures</label>
+          <input type="search" id="figures-filter" placeholder="Filter figures..." oninput="filterFigures(this.value)" style="margin-left:auto;padding:0.4rem 0.65rem;border:1px solid #cbbba2;border-radius:4px;" />
+        </div>
+        <div class="figures-grid" id="figures-grid">
+{''.join(fig_cards_html)}        </div>
+      </div>
+    </section>
+"""
+    html_content += landing_html + index_html + figures_html
 
     # Generate page blocks
     cards_html = []
@@ -667,8 +1098,7 @@ def generate_html(data: dict):
         iiif_1200_uri = f"https://iiif.wellcomecollection.org/image/{jp2}/full/1200,/0/default.jpg"
         local_img = f"canvas_{cnum:04d}.jpg"
 
-        active_cls = " active" if idx == 0 else ""
-        card = [f'    <div class="page-card{active_cls}" id="page-card-{idx}" data-index="{idx}">\n']
+        card = [f'    <div class="page-card" id="page-card-{idx}" data-index="{idx}">\n']
         card.append('      <div class="page-header">\n')
         card.append(f'        <h2 class="page-title">Page {orig_p} &mdash; Canvas #{cnum} ({fside})</h2>\n')
         card.append('        <div class="page-meta">\n')
@@ -714,7 +1144,7 @@ def generate_html(data: dict):
             card.append('            <thead>\n')
             card.append('              <tr>\n')
             card.append('                <th class="col-num">#</th>\n')
-            card.append('                <th>German Diplomatic (Original)</th>\n')
+            card.append('                <th>Transcription</th>\n')
             card.append('                <th>English Translation &amp; Editorial Glosses</th>\n')
             card.append('              </tr>\n')
             card.append('            </thead>\n')
@@ -745,19 +1175,29 @@ def generate_html(data: dict):
         <button type="submit" class="btn-secondary" value="close">Close</button>
       </form>
     </div>
+    <div class="search-dialog-bar">
+      <search>
+        <form id="dialog-search-form" action="#" method="GET">
+          <label for="dialog-search-input" class="visually-hidden">Search across all {total_pages} pages</label>
+          <input type="search" id="dialog-search-input" name="dq" placeholder="Type German, English, or editorial term (e.g. cataract, antimony, Wienn)..." autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="search" autofocus />
+          <button type="submit" class="btn-primary">Search</button>
+        </form>
+      </search>
+    </div>
     <div id="search-dialog-meta" class="search-dialog-meta" role="status" aria-live="polite"></div>
     <div id="search-results-list" class="search-results-list"></div>
   </dialog>
 
   <script>
-    let currentIndex = 0;
+    let currentIndex = -1;
     const total = """ + str(total_pages) + """;
     let corpusIndex = null;
+    let activeIndexCat = 'All';
 
     function buildCorpusIndex() {
       if (corpusIndex !== null) return corpusIndex;
       corpusIndex = [];
-      const cards = document.querySelectorAll('.page-card');
+      const cards = document.querySelectorAll('.page-card[data-index]');
       cards.forEach((card, pIdx) => {
         const titleEl = card.querySelector('.page-title');
         const pageLabel = titleEl ? titleEl.textContent.trim() : ('Canvas #' + (pIdx + 1));
@@ -783,6 +1223,64 @@ def generate_html(data: dict):
       return corpusIndex;
     }
 
+    function showLanding() {
+      currentIndex = -1;
+      document.querySelectorAll('.page-card').forEach(el => el.classList.remove('active'));
+      document.getElementById('landing-card').classList.add('active');
+      document.getElementById('page-select').value = 'landing';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showIndex() {
+      currentIndex = -1;
+      document.querySelectorAll('.page-card').forEach(el => el.classList.remove('active'));
+      document.getElementById('index-card').classList.add('active');
+      document.getElementById('page-select').value = 'index';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    let activeFigMode = 'all';
+    function showFigures() {
+      currentIndex = -1;
+      document.querySelectorAll('.page-card').forEach(el => el.classList.remove('active'));
+      document.getElementById('figures-card').classList.add('active');
+      document.getElementById('page-select').value = 'figures';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function setFigureFilter(mode, btn) {
+      activeFigMode = mode;
+      const controls = btn.parentElement;
+      controls.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterFigures(document.getElementById('figures-filter').value);
+    }
+
+    function filterFigures(q) {
+      const ql = q.trim().toLowerCase();
+      document.querySelectorAll('#figures-grid .figure-card').forEach(card => {
+        const modeOk = activeFigMode === 'all' || card.dataset.crop === activeFigMode;
+        const textOk = !ql || card.dataset.text.includes(ql);
+        card.style.display = (modeOk && textOk) ? '' : 'none';
+      });
+    }
+
+    function setIndexCategory(cat, btn) {
+      activeIndexCat = cat;
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      filterIndex(document.getElementById('index-filter').value);
+    }
+
+    function filterIndex(q) {
+      const ql = q.trim().toLowerCase();
+      document.querySelectorAll('#index-grid .entity-card').forEach(card => {
+        const catOk = activeIndexCat === 'All' || card.dataset.cat === activeIndexCat;
+        const textOk = !ql || card.dataset.name.includes(ql);
+        card.style.display = (catOk && textOk) ? '' : 'none';
+      });
+    }
+
     function showPage(index) {
       if (index < 0) index = 0;
       if (index >= total) index = total - 1;
@@ -790,15 +1288,22 @@ def generate_html(data: dict):
       document.querySelectorAll('.page-card').forEach(el => el.classList.remove('active'));
       const activeCard = document.getElementById('page-card-' + index);
       if (activeCard) activeCard.classList.add('active');
-      document.getElementById('page-select').value = index;
+      document.getElementById('page-select').value = String(index);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function changePage(delta) {
-      showPage(currentIndex + delta);
+      if (currentIndex < 0) {
+        showPage(delta > 0 ? 0 : total - 1);
+      } else {
+        showPage(currentIndex + delta);
+      }
     }
 
     function jumpToPage(val) {
+      if (val === 'landing') return showLanding();
+      if (val === 'index') return showIndex();
+      if (val === 'figures') return showFigures();
       showPage(parseInt(val, 10));
     }
 
@@ -853,17 +1358,16 @@ def generate_html(data: dict):
       }
     }
 
-    function openCorpusSearch(query) {
+    function renderCorpusResults(query) {
       const q = query.trim();
       const ql = q.toLowerCase();
-      const dialog = document.getElementById('search-dialog');
       const metaEl = document.getElementById('search-dialog-meta');
       const listEl = document.getElementById('search-results-list');
+      const dialog = document.getElementById('search-dialog');
       listEl.textContent = '';
 
       if (!ql) {
-        metaEl.textContent = 'Enter a German, English, or editorial term to search across all ' + total + ' pages.';
-        dialog.showModal();
+        metaEl.textContent = 'Type a German, English, or editorial term above to search across all ' + total + ' pages.';
         return;
       }
 
@@ -926,11 +1430,22 @@ def generate_html(data: dict):
         frag.appendChild(btn);
       });
       listEl.appendChild(frag);
-      dialog.showModal();
+    }
+
+    function openCorpusSearch(query) {
+      const dialog = document.getElementById('search-dialog');
+      const dInput = document.getElementById('dialog-search-input');
+      dInput.value = query || '';
+      renderCorpusResults(dInput.value);
+      if (!dialog.open) dialog.showModal();
+      dInput.focus();
     }
 
     const searchForm = document.getElementById('corpus-search-form');
     const searchInput = document.getElementById('filter-input');
+    const dialogSearchForm = document.getElementById('dialog-search-form');
+    const dialogSearchInput = document.getElementById('dialog-search-input');
+
     searchForm.addEventListener('submit', (e) => {
       e.preventDefault();
       openCorpusSearch(searchInput.value);
@@ -941,6 +1456,17 @@ def generate_html(data: dict):
         e.preventDefault();
         openCorpusSearch(searchInput.value);
       }
+    });
+    dialogSearchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      searchInput.value = dialogSearchInput.value;
+      filterText(dialogSearchInput.value);
+      renderCorpusResults(dialogSearchInput.value);
+    });
+    dialogSearchInput.addEventListener('input', () => {
+      searchInput.value = dialogSearchInput.value;
+      filterText(dialogSearchInput.value);
+      renderCorpusResults(dialogSearchInput.value);
     });
 
     if (!('closedBy' in HTMLDialogElement.prototype)) {
