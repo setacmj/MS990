@@ -577,9 +577,9 @@
   {
     "category": "Ingredients",
     "name": "Myrrh",
-    "qid": "Q6948525",
-    "wd_label": "Myrrh",
-    "wd_desc": "1972 debut studio album by Robin Williamson",
+    "qid": "Q203635",
+    "wd_label": "myrrh",
+    "wd_desc": "resin produced by the Commiphora myrrha tree",
     "line_hits": 201,
     "page_hits": 134,
     "refs": [
@@ -3004,9 +3004,9 @@
   {
     "category": "Ingredients",
     "name": "Honey",
-    "qid": "Q18331020",
-    "wd_label": "Honey",
-    "wd_desc": "family name",
+    "qid": "Q10987",
+    "wd_label": "honey",
+    "wd_desc": "sweet food made by bees mostly using nectar from flowers",
     "line_hits": 463,
     "page_hits": 251,
     "refs": [
@@ -4521,9 +4521,9 @@
   {
     "category": "Ingredients",
     "name": "Vinegar",
-    "qid": "Q130888",
-    "wd_label": "Drosophila melanogaster",
-    "wd_desc": "species of fly",
+    "qid": "Q41354",
+    "wd_label": "vinegar",
+    "wd_desc": "liquid consisting mainly of acetic acid and water",
     "line_hits": 481,
     "page_hits": 225,
     "refs": [
@@ -5882,9 +5882,9 @@
   {
     "category": "Ingredients",
     "name": "Saffron",
-    "qid": "Q15582782",
-    "wd_label": "Saffron",
-    "wd_desc": "female given name",
+    "qid": "Q25434",
+    "wd_label": "saffron",
+    "wd_desc": "spice derived from the flower of Crocus sativus",
     "line_hits": 245,
     "page_hits": 162,
     "refs": [
@@ -9232,9 +9232,9 @@
   {
     "category": "Ingredients",
     "name": "Alum",
-    "qid": "Q508719",
-    "wd_label": "alumnus",
-    "wd_desc": "graduate of a school, college, or university",
+    "qid": "Q190527",
+    "wd_label": "alum",
+    "wd_desc": "family of double sulfate salts of monovalent and trivalent cations",
     "line_hits": 153,
     "page_hits": 94,
     "refs": [
@@ -9807,9 +9807,9 @@
   {
     "category": "Ingredients",
     "name": "Vitriol",
-    "qid": "Q4118",
-    "wd_label": "sulfuric acid",
-    "wd_desc": "chemical compound",
+    "qid": "Q427282",
+    "wd_label": "vitriol",
+    "wd_desc": "index of chemical compounds with the same name",
     "line_hits": 194,
     "page_hits": 107,
     "refs": [
@@ -12629,9 +12629,9 @@
   {
     "category": "Ingredients",
     "name": "Opium / Laudanum",
-    "qid": "Q114727322",
-    "wd_label": "Opium",
-    "wd_desc": "American record label",
+    "qid": "Q46452",
+    "wd_label": "opium",
+    "wd_desc": "dried latex of the opium poppy containing narcotic compounds",
     "line_hits": 134,
     "page_hits": 78,
     "refs": [
@@ -13108,9 +13108,9 @@
   {
     "category": "Ingredients",
     "name": "Chamomile",
-    "qid": "Q424567",
-    "wd_label": "apigenin",
-    "wd_desc": "chemical compound",
+    "qid": "Q14169150",
+    "wd_label": "chamomile",
+    "wd_desc": "common name, for several daisy-like plants",
     "line_hits": 295,
     "page_hits": 159,
     "refs": [
@@ -20647,9 +20647,9 @@
   {
     "category": "Ingredients",
     "name": "Rosemary",
-    "qid": "Q1428410",
-    "wd_label": "Rosemary",
-    "wd_desc": "female given name",
+    "qid": "Q102240169",
+    "wd_label": "Salvia rosmarinus",
+    "wd_desc": "species of plant, for the culinary or medicinal herb use Q68315046",
     "line_hits": 145,
     "page_hits": 103,
     "refs": [
@@ -21755,9 +21755,9 @@
   {
     "category": "Ingredients",
     "name": "Cinnamon",
-    "qid": "Q1092551",
-    "wd_label": "Cinnamon",
-    "wd_desc": "GTK 3-based desktop environment initially developed for Linux Mint",
+    "qid": "Q28165",
+    "wd_label": "cinnamon",
+    "wd_desc": "spice obtained from the inner bark of several tree species from the genus Cinnamomum",
     "line_hits": 297,
     "page_hits": 162,
     "refs": [
@@ -23673,9 +23673,9 @@
   {
     "category": "Ingredients",
     "name": "Nutmeg / Mace",
-    "qid": "Q779",
-    "wd_label": "Connecticut",
-    "wd_desc": "state of the United States of America",
+    "qid": "Q83165",
+    "wd_label": "nutmeg",
+    "wd_desc": "spice from trees in the genus Myristica",
     "line_hits": 281,
     "page_hits": 171,
     "refs": [
@@ -26388,9 +26388,9 @@
   {
     "category": "Ingredients",
     "name": "Terra Sigillata",
-    "qid": "Q367622",
-    "wd_label": "terra sigillata",
-    "wd_desc": "fine red Ancient Roman pottery with glossy surface slips made in specific areas of the Roman Empire",
+    "qid": null,
+    "wd_label": "",
+    "wd_desc": "",
     "line_hits": 89,
     "page_hits": 65,
     "refs": [
@@ -27082,9 +27082,9 @@
   {
     "category": "Ingredients",
     "name": "Sarsaparilla",
-    "qid": "Q7424589",
-    "wd_label": "Sarsaparilla",
-    "wd_desc": "soft drink",
+    "qid": "Q165315",
+    "wd_label": "Smilax",
+    "wd_desc": "genus of plants",
     "line_hits": 47,
     "page_hits": 44,
     "refs": [
@@ -27357,9 +27357,9 @@
   {
     "category": "Ingredients",
     "name": "Castoreum",
-    "qid": "Q10443613",
-    "wd_label": "Castoreum",
-    "wd_desc": "genus of fungi",
+    "qid": "Q162724",
+    "wd_label": "castoreum",
+    "wd_desc": "substance mixture produced by beavers",
     "line_hits": 90,
     "page_hits": 68,
     "refs": [
@@ -27776,9 +27776,9 @@
   {
     "category": "Ingredients",
     "name": "Hartshorn",
-    "qid": "Q37215346",
-    "wd_label": "Hartshorn",
-    "wd_desc": "family name",
+    "qid": "Q5675278",
+    "wd_label": "hartshorn",
+    "wd_desc": "horn of male red deer",
     "line_hits": 144,
     "page_hits": 98,
     "refs": [
@@ -30789,9 +30789,9 @@
   {
     "category": "Ingredients",
     "name": "Galbanum",
-    "qid": "Q17471940",
-    "wd_label": "Galbanum",
-    "wd_desc": "genus of plants",
+    "qid": "Q909191",
+    "wd_label": "galbanum",
+    "wd_desc": "resin produced by plants of the genus Ferula",
     "line_hits": 38,
     "page_hits": 31,
     "refs": [
@@ -32470,9 +32470,9 @@
   {
     "category": "Ingredients",
     "name": "Copaiba Balsam",
-    "qid": "Q17423050",
-    "wd_label": "Copaiba",
-    "wd_desc": "genus of plants",
+    "qid": "Q2481036",
+    "wd_label": "copaiba",
+    "wd_desc": "resin and essential oil from South American Copaifera trees",
     "line_hits": 7,
     "page_hits": 6,
     "refs": [
@@ -34525,7 +34525,7 @@
     "category": "People",
     "name": "Paracelsus",
     "qid": "Q83428",
-    "wd_label": "Paracelsus",
+    "wd_label": "",
     "wd_desc": "Swiss physician, philosopher, theologian, and alchemist (c. 1493–1541)",
     "line_hits": 10,
     "page_hits": 9,
@@ -34755,7 +34755,7 @@
     "category": "People",
     "name": "Oswald Croll",
     "qid": "Q899007",
-    "wd_label": "Oswald Croll",
+    "wd_label": "",
     "wd_desc": "German alchemist and writer (ca 1560-1608)",
     "line_hits": 9,
     "page_hits": 9,
@@ -36633,9 +36633,9 @@
   {
     "category": "Terms",
     "name": "Erysipelas",
-    "qid": "Q11634308",
-    "wd_label": "swine erysipelas",
-    "wd_desc": "non-human Erysipelothrix rhusiopathiae infection (obsolete DOID)",
+    "qid": "Q207092",
+    "wd_label": "erysipelas",
+    "wd_desc": "human disease",
     "line_hits": 138,
     "page_hits": 93,
     "refs": [
@@ -37202,9 +37202,9 @@
   {
     "category": "Terms",
     "name": "Dropsy (Edema)",
-    "qid": "Q37573809",
-    "wd_label": "Edema",
-    "wd_desc": "family name",
+    "qid": "Q152234",
+    "wd_label": "edema",
+    "wd_desc": "abnormal accumulation of fluid in the interstitium",
     "line_hits": 82,
     "page_hits": 46,
     "refs": [
@@ -39848,9 +39848,9 @@
   {
     "category": "Terms",
     "name": "Hernia",
-    "qid": "Q26842781",
-    "wd_label": "Hernia : the journal of hernias and abdominal wall surgery",
-    "wd_desc": "journal",
+    "qid": "Q133076",
+    "wd_label": "hernia",
+    "wd_desc": "abnormal exit of tissue or an organ through the wall of the cavity in which it normally resides",
     "line_hits": 97,
     "page_hits": 41,
     "refs": [
@@ -40105,9 +40105,9 @@
   {
     "category": "Terms",
     "name": "Distillation",
-    "qid": "Q5282946",
-    "wd_label": "Distillation",
-    "wd_desc": "compilation album by Wishbone Ash",
+    "qid": "Q101017",
+    "wd_label": "distillation",
+    "wd_desc": "method of separating mixtures based on differences in volatility of components in a boiling liquid mixture",
     "line_hits": 196,
     "page_hits": 120,
     "refs": [
@@ -41986,9 +41986,9 @@
   {
     "category": "Terms",
     "name": "Bloodletting",
-    "qid": "Q1099162",
-    "wd_label": "Bloodletting",
-    "wd_desc": "album by Overkill",
+    "qid": "Q356405",
+    "wd_label": "bloodletting",
+    "wd_desc": "therapy, now rarely used in medicine",
     "line_hits": 122,
     "page_hits": 70,
     "refs": [
@@ -42417,9 +42417,9 @@
   {
     "category": "Terms",
     "name": "Clyster (Enema)",
-    "qid": "Q4038065",
-    "wd_label": "Enema",
-    "wd_desc": "genus of insects",
+    "qid": "Q194517",
+    "wd_label": "enema",
+    "wd_desc": "procedure of introducing liquids into the rectum and colon via the anus",
     "line_hits": 98,
     "page_hits": 40,
     "refs": [
@@ -44457,8 +44457,8 @@
     "category": "People",
     "name": "Frater Bernardin, OFMCap (Author-Compiler)",
     "qid": "Q124862",
-    "wd_label": "Frater Bernardin, OFMCap",
-    "wd_desc": "Styrian Capuchin lay-brother surgeon-apothecary in Graz (active 1673–1696+, suffered from gout); linked to Order of Friars Minor Capuchin",
+    "wd_label": "Order of Friars Minor Capuchin",
+    "wd_desc": "religious order of Franciscan friars",
     "line_hits": 4,
     "page_hits": 3,
     "refs": [
@@ -44487,7 +44487,7 @@
     "name": "Franz Kaspar von Stadion (Prince-Bishop of Lavant)",
     "qid": "Q21540339",
     "wd_label": "Franz Kaspar von Stadion",
-    "wd_desc": "Prince-Bishop of Lavant (1637–1704; r. 1673–1704); attended for 9 weeks by Frater Bernardin alongside Doctor Heibt",
+    "wd_desc": "(1637-1704)",
     "line_hits": 2,
     "page_hits": 1,
     "refs": [
@@ -44503,8 +44503,8 @@
     "category": "People",
     "name": "House of Herberstein",
     "qid": "Q836044",
-    "wd_label": "House of Herberstein",
-    "wd_desc": "Austro-Styrian noble dynasty; Frater Bernardin dined at Lord von Herberstein's estate in July 1696",
+    "wd_label": "Herberstein",
+    "wd_desc": "noble family",
     "line_hits": 1,
     "page_hits": 1,
     "refs": [
@@ -44520,8 +44520,8 @@
     "category": "People",
     "name": "Balthasar Timaeus von Güldenklee",
     "qid": "Q18616549",
-    "wd_label": "Balthasar Timaeus von Güldenklee",
-    "wd_desc": "German physician and chief court physician of Brandenburg (1600–1667); cited as 'Timæo Lib. 5. c. 8. p: 363'",
+    "wd_label": "",
+    "wd_desc": "Silesian physician (ca. 1600-1667)",
     "line_hits": 1,
     "page_hits": 1,
     "refs": [
@@ -44537,8 +44537,8 @@
     "category": "People",
     "name": "Pater Höpel / Högel, S.J. (Jesuit Convict Regent)",
     "qid": "Q36380",
-    "wd_label": "Pater Höpel / Högel, S.J.",
-    "wd_desc": "Jesuit Regent of the Seminary Convict (July 1696) who defended the Sympathetic Powder; linked to Society of Jesus",
+    "wd_label": "Society of Jesus",
+    "wd_desc": "Catholic order of priests and brothers founded by Ignatius of Loyola and his companions, approved by Pope Paul III in 1540 and active worldwide in education and missionary work",
     "line_hits": 6,
     "page_hits": 2,
     "refs": [
@@ -44560,8 +44560,8 @@
     "category": "People",
     "name": "Queen Elizabeth of Hungary (Aqua Reginae Hungariae)",
     "qid": "Q242825",
-    "wd_label": "Queen Elizabeth of Hungary",
-    "wd_desc": "Queen consort of Hungary (1305–1380), credited in the first-person charter on p. 527 with the rosemary gout water",
+    "wd_label": "Elizabeth of Poland, Queen of Hungary",
+    "wd_desc": "Hungarian queen",
     "line_hits": 2,
     "page_hits": 1,
     "refs": [
@@ -44577,8 +44577,8 @@
     "category": "People",
     "name": "Doctor Hausenbach & Empirical Practitioners",
     "qid": "",
-    "wd_label": "Doctor Hausenbach & Empirical Practitioners",
-    "wd_desc": "Regional physicians and empirics cited by Frater Bernardin ('Doctor Hausenbach', 'der Krebs doctor', 'herren Figler')",
+    "wd_label": "",
+    "wd_desc": "",
     "line_hits": 4,
     "page_hits": 3,
     "refs": [
@@ -44607,7 +44607,7 @@
     "name": "Graz (Styria)",
     "qid": "Q13298",
     "wd_label": "Graz",
-    "wd_desc": "Capital of Styria, Austria; home city of Frater Bernardin at the first Capuchin friary ('zu Grätz... in dem alten Kloster in der Stadt')",
+    "wd_desc": "capital of Styria, Austria",
     "line_hits": 1,
     "page_hits": 1,
     "refs": [
