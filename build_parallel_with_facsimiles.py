@@ -507,6 +507,124 @@ def generate_html(data: dict):
       background: var(--accent-gold);
       color: #1a1612;
     }}
+    .visually-hidden {{
+      position: absolute;
+      clip-path: inset(50%);
+      overflow: hidden;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      border: 0;
+      white-space: nowrap;
+    }}
+    search form {{
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }}
+    .search-status {{
+      font-size: 0.78rem;
+      color: #e2d7c3;
+      white-space: nowrap;
+    }}
+    dialog:modal {{
+      overscroll-behavior: contain;
+      max-width: min(920px, 92vw);
+      width: 100%;
+      max-height: 82vh;
+      margin: auto;
+      padding: 0;
+      border: 1px solid #cbbba2;
+      border-radius: 8px;
+      background: #fdfaf3;
+      color: #2b231b;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    }}
+    dialog[open] {{
+      display: flex;
+      flex-direction: column;
+    }}
+    dialog::backdrop {{
+      background: rgba(20, 16, 12, 0.65);
+      overflow: hidden;
+      overscroll-behavior: contain;
+    }}
+    .search-dialog-header {{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem 1.2rem;
+      background: #2b231b;
+      color: #fdfaf3;
+      border-bottom: 1px solid #4a3f32;
+    }}
+    .search-dialog-header h2 {{
+      margin: 0;
+      font-size: 1.05rem;
+    }}
+    .search-dialog-meta {{
+      padding: 0.6rem 1.2rem;
+      background: #f2eadc;
+      border-bottom: 1px solid #dfd3be;
+      font-size: 0.85rem;
+      color: #4a3f32;
+    }}
+    .search-results-list {{
+      overflow-y: auto;
+      padding: 0.8rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }}
+    .search-result-btn {{
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 0.75rem 0.9rem;
+      background: #ffffff;
+      border: 1px solid #dfd3be;
+      border-radius: 6px;
+      cursor: pointer;
+      color: #2b231b;
+      font: inherit;
+    }}
+    .search-result-btn:hover,
+    .search-result-btn:focus-visible {{
+      border-color: #8b5a2b;
+      background: #fcf7ec;
+      outline: 2px solid #8b5a2b;
+      outline-offset: 1px;
+    }}
+    .search-result-loc {{
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #7c3f1d;
+      margin-bottom: 0.25rem;
+    }}
+    .search-result-pair {{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      font-size: 0.88rem;
+      line-height: 1.4;
+    }}
+    @media (max-width: 700px) {{
+      .search-result-pair {{
+        grid-template-columns: 1fr;
+      }}
+    }}
+    mark {{
+      background: #fde68a;
+      color: #1f160d;
+      padding: 0 2px;
+      border-radius: 2px;
+    }}
+    tr.search-target-row {{
+      background: #fef3c7 !important;
+      outline: 2px solid #b45309;
+    }}
   </style>
 </head>
 <body>
@@ -516,12 +634,19 @@ def generate_html(data: dict):
       <p>Early New High German Medical &amp; Surgical Compendium (c. 1675) · {total_pages} Canvases · {total_lines:,} Lines</p>
     </div>
     <div class="nav-controls">
-      <button class="btn-secondary" id="btn-prev" onclick="changePage(-1)">&#9664; Prev</button>
-      <select id="page-select" onchange="jumpToPage(this.value)">
+      <button type="button" class="btn-secondary" id="btn-prev" onclick="changePage(-1)">&#9664; Prev</button>
+      <select id="page-select" aria-label="Select manuscript page" onchange="jumpToPage(this.value)">
         {''.join(page_options)}
       </select>
-      <button class="btn-secondary" id="btn-next" onclick="changePage(1)">Next &#9654;</button>
-      <input type="text" id="filter-input" placeholder="Search page..." oninput="filterText(this.value)" />
+      <button type="button" class="btn-secondary" id="btn-next" onclick="jumpToPage(currentIndex + 1)">Next &#9654;</button>
+      <search>
+        <form id="corpus-search-form" action="#" method="GET">
+          <label for="filter-input" class="visually-hidden">Search across all pages</label>
+          <input type="search" id="filter-input" name="q" placeholder="Search all {total_pages} pages..." autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="search" oninput="filterText(this.value)" />
+          <button type="submit" class="btn-secondary" id="btn-search-all">Search Edition</button>
+        </form>
+      </search>
+      <span id="search-status" class="search-status" role="status" aria-live="polite"></span>
     </div>
   </header>
 
@@ -613,9 +738,50 @@ def generate_html(data: dict):
     html_content += """
   </main>
 
+  <dialog id="search-dialog" closedby="any" aria-labelledby="search-dialog-title">
+    <div class="search-dialog-header">
+      <h2 id="search-dialog-title">Search Across All {total_pages} Pages</h2>
+      <form method="dialog">
+        <button type="submit" class="btn-secondary" value="close">Close</button>
+      </form>
+    </div>
+    <div id="search-dialog-meta" class="search-dialog-meta" role="status" aria-live="polite"></div>
+    <div id="search-results-list" class="search-results-list"></div>
+  </dialog>
+
   <script>
     let currentIndex = 0;
     const total = """ + str(total_pages) + """;
+    let corpusIndex = null;
+
+    function buildCorpusIndex() {
+      if (corpusIndex !== null) return corpusIndex;
+      corpusIndex = [];
+      const cards = document.querySelectorAll('.page-card');
+      cards.forEach((card, pIdx) => {
+        const titleEl = card.querySelector('.page-title');
+        const pageLabel = titleEl ? titleEl.textContent.trim() : ('Canvas #' + (pIdx + 1));
+        const rows = card.querySelectorAll('tbody tr');
+        rows.forEach((tr) => {
+          const numEl = tr.querySelector('.col-num');
+          const deEl = tr.querySelector('.col-de');
+          const enEl = tr.querySelector('.col-en');
+          const deText = deEl ? deEl.textContent : '';
+          const enText = enEl ? enEl.textContent : '';
+          const combined = (deText + ' ' + enText).toLowerCase();
+          corpusIndex.push({
+            pIdx,
+            pageLabel,
+            lineNum: numEl ? numEl.textContent.trim() : '',
+            deText,
+            enText,
+            combined,
+            tr
+          });
+        });
+      });
+      return corpusIndex;
+    }
 
     function showPage(index) {
       if (index < 0) index = 0;
@@ -637,21 +803,160 @@ def generate_html(data: dict):
     }
 
     function filterText(q) {
-      q = q.trim().toLowerCase();
+      const raw = q.trim();
+      const ql = raw.toLowerCase();
       const activeCard = document.getElementById('page-card-' + currentIndex);
-      if (!activeCard) return;
-      const rows = activeCard.querySelectorAll('tbody tr');
-      rows.forEach(tr => {
-        if (!q) {
-          tr.style.display = '';
-        } else {
-          const match = tr.textContent.toLowerCase().includes(q);
-          tr.style.display = match ? '' : 'none';
+      if (activeCard) {
+        activeCard.querySelectorAll('tbody tr').forEach(tr => {
+          tr.classList.remove('search-target-row');
+          if (!ql) {
+            tr.style.display = '';
+          } else {
+            const match = tr.textContent.toLowerCase().includes(ql);
+            tr.style.display = match ? '' : 'none';
+          }
+        });
+      }
+      const statusEl = document.getElementById('search-status');
+      if (!ql) {
+        statusEl.textContent = '';
+        return;
+      }
+      const idx = buildCorpusIndex();
+      let hits = 0;
+      for (let i = 0; i < idx.length; i++) {
+        if (idx[i].combined.includes(ql)) hits++;
+      }
+      statusEl.textContent = hits + ' hits across edition';
+    }
+
+    function appendHighlighted(container, text, queryLower) {
+      if (!queryLower) {
+        container.textContent = text;
+        return;
+      }
+      const lower = text.toLowerCase();
+      let pos = 0;
+      let matchIdx = lower.indexOf(queryLower, pos);
+      while (matchIdx !== -1) {
+        if (matchIdx > pos) {
+          container.appendChild(document.createTextNode(text.slice(pos, matchIdx)));
         }
+        const mark = document.createElement('mark');
+        mark.textContent = text.slice(matchIdx, matchIdx + queryLower.length);
+        container.appendChild(mark);
+        pos = matchIdx + queryLower.length;
+        matchIdx = lower.indexOf(queryLower, pos);
+      }
+      if (pos < text.length) {
+        container.appendChild(document.createTextNode(text.slice(pos)));
+      }
+    }
+
+    function openCorpusSearch(query) {
+      const q = query.trim();
+      const ql = q.toLowerCase();
+      const dialog = document.getElementById('search-dialog');
+      const metaEl = document.getElementById('search-dialog-meta');
+      const listEl = document.getElementById('search-results-list');
+      listEl.textContent = '';
+
+      if (!ql) {
+        metaEl.textContent = 'Enter a German, English, or editorial term to search across all ' + total + ' pages.';
+        dialog.showModal();
+        return;
+      }
+
+      const idx = buildCorpusIndex();
+      const matches = [];
+      const pageSet = new Set();
+      for (let i = 0; i < idx.length; i++) {
+        if (idx[i].combined.includes(ql)) {
+          matches.push(idx[i]);
+          pageSet.add(idx[i].pIdx);
+        }
+      }
+
+      const maxShow = 300;
+      const shown = matches.slice(0, maxShow);
+      metaEl.textContent =
+        matches.length === 0
+          ? 'No matches found for "' + q + '" across ' + total + ' pages.'
+          : 'Found ' + matches.length.toLocaleString() + ' matching lines across ' + pageSet.size + ' pages' +
+            (matches.length > maxShow ? ' (showing first ' + maxShow + ').' : '.');
+
+      const frag = document.createDocumentFragment();
+      shown.forEach((m) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'search-result-btn';
+
+        const loc = document.createElement('div');
+        loc.className = 'search-result-loc';
+        loc.textContent = m.pageLabel + ' · Line ' + m.lineNum;
+
+        const pair = document.createElement('div');
+        pair.className = 'search-result-pair';
+
+        const deDiv = document.createElement('div');
+        appendHighlighted(deDiv, m.deText, ql);
+
+        const enDiv = document.createElement('div');
+        appendHighlighted(enDiv, m.enText, ql);
+
+        pair.appendChild(deDiv);
+        pair.appendChild(enDiv);
+        btn.appendChild(loc);
+        btn.appendChild(pair);
+
+        btn.addEventListener('click', () => {
+          dialog.close();
+          showPage(m.pIdx);
+          const activeCard = document.getElementById('page-card-' + m.pIdx);
+          if (activeCard) {
+            activeCard.querySelectorAll('tbody tr').forEach(tr => {
+              tr.style.display = '';
+              tr.classList.remove('search-target-row');
+            });
+          }
+          m.tr.classList.add('search-target-row');
+          m.tr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+
+        frag.appendChild(btn);
       });
+      listEl.appendChild(frag);
+      dialog.showModal();
+    }
+
+    const searchForm = document.getElementById('corpus-search-form');
+    const searchInput = document.getElementById('filter-input');
+    searchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      openCorpusSearch(searchInput.value);
+    });
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.isComposing) return;
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        openCorpusSearch(searchInput.value);
+      }
+    });
+
+    if (!('closedBy' in HTMLDialogElement.prototype)) {
+      const outside = (e, dialog) => {
+        const r = dialog.getBoundingClientRect();
+        return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
+      };
+      for (const dialog of document.querySelectorAll('dialog[closedby="any"]')) {
+        let pressedOutside = false;
+        dialog.addEventListener('pointerdown', (e) => { pressedOutside = outside(e, dialog); });
+        dialog.addEventListener('pointerup', (e) => { if (pressedOutside && outside(e, dialog)) dialog.close(); });
+      }
     }
 
     document.addEventListener('keydown', (e) => {
+      if (document.getElementById('search-dialog').open) return;
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
       if (e.key === 'ArrowLeft') changePage(-1);
       if (e.key === 'ArrowRight') changePage(1);
