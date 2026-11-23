@@ -1,0 +1,13 @@
+# Facsimile images (served via Wellcome Collection IIIF API)
+*.jpg
+*.jpeg
+*.png
+images/
+
+# Large JSON bundle (attach to GitHub Release / Zenodo instead; >50 MB)
+MS990_edition_data.json
+
+# OS / Python artifacts
+.DS_Store
+__pycache__/
+*.pyc
