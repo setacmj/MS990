@@ -44452,5 +44452,171 @@
         "lines": 1
       }
     ]
+  },
+  {
+    "category": "People",
+    "name": "Frater Bernardin, OFMCap (Author-Compiler)",
+    "qid": "Q124862",
+    "wd_label": "Frater Bernardin, OFMCap",
+    "wd_desc": "Styrian Capuchin lay-brother surgeon-apothecary in Graz (active 1673–1696+, suffered from gout); linked to Order of Friars Minor Capuchin",
+    "line_hits": 4,
+    "page_hits": 3,
+    "refs": [
+      {
+        "pIdx": 445,
+        "canvas_num": 450,
+        "orig_page": "505",
+        "lines": 1
+      },
+      {
+        "pIdx": 447,
+        "canvas_num": 452,
+        "orig_page": "507",
+        "lines": 2
+      },
+      {
+        "pIdx": 640,
+        "canvas_num": 645,
+        "orig_page": "708",
+        "lines": 1
+      }
+    ]
+  },
+  {
+    "category": "People",
+    "name": "Franz Kaspar von Stadion (Prince-Bishop of Lavant)",
+    "qid": "Q21540339",
+    "wd_label": "Franz Kaspar von Stadion",
+    "wd_desc": "Prince-Bishop of Lavant (1637–1704; r. 1673–1704); attended for 9 weeks by Frater Bernardin alongside Doctor Heibt",
+    "line_hits": 2,
+    "page_hits": 1,
+    "refs": [
+      {
+        "pIdx": 450,
+        "canvas_num": 455,
+        "orig_page": "510",
+        "lines": 2
+      }
+    ]
+  },
+  {
+    "category": "People",
+    "name": "House of Herberstein",
+    "qid": "Q836044",
+    "wd_label": "House of Herberstein",
+    "wd_desc": "Austro-Styrian noble dynasty; Frater Bernardin dined at Lord von Herberstein's estate in July 1696",
+    "line_hits": 1,
+    "page_hits": 1,
+    "refs": [
+      {
+        "pIdx": 449,
+        "canvas_num": 454,
+        "orig_page": "509",
+        "lines": 1
+      }
+    ]
+  },
+  {
+    "category": "People",
+    "name": "Balthasar Timaeus von Güldenklee",
+    "qid": "Q18616549",
+    "wd_label": "Balthasar Timaeus von Güldenklee",
+    "wd_desc": "German physician and chief court physician of Brandenburg (1600–1667); cited as 'Timæo Lib. 5. c. 8. p: 363'",
+    "line_hits": 1,
+    "page_hits": 1,
+    "refs": [
+      {
+        "pIdx": 446,
+        "canvas_num": 451,
+        "orig_page": "506",
+        "lines": 1
+      }
+    ]
+  },
+  {
+    "category": "People",
+    "name": "Pater Höpel / Högel, S.J. (Jesuit Convict Regent)",
+    "qid": "Q36380",
+    "wd_label": "Pater Höpel / Högel, S.J.",
+    "wd_desc": "Jesuit Regent of the Seminary Convict (July 1696) who defended the Sympathetic Powder; linked to Society of Jesus",
+    "line_hits": 6,
+    "page_hits": 2,
+    "refs": [
+      {
+        "pIdx": 445,
+        "canvas_num": 450,
+        "orig_page": "505",
+        "lines": 4
+      },
+      {
+        "pIdx": 449,
+        "canvas_num": 454,
+        "orig_page": "509",
+        "lines": 2
+      }
+    ]
+  },
+  {
+    "category": "People",
+    "name": "Queen Elizabeth of Hungary (Aqua Reginae Hungariae)",
+    "qid": "Q242825",
+    "wd_label": "Queen Elizabeth of Hungary",
+    "wd_desc": "Queen consort of Hungary (1305–1380), credited in the first-person charter on p. 527 with the rosemary gout water",
+    "line_hits": 2,
+    "page_hits": 1,
+    "refs": [
+      {
+        "pIdx": 466,
+        "canvas_num": 471,
+        "orig_page": "527",
+        "lines": 2
+      }
+    ]
+  },
+  {
+    "category": "People",
+    "name": "Doctor Hausenbach & Empirical Practitioners",
+    "qid": "",
+    "wd_label": "Doctor Hausenbach & Empirical Practitioners",
+    "wd_desc": "Regional physicians and empirics cited by Frater Bernardin ('Doctor Hausenbach', 'der Krebs doctor', 'herren Figler')",
+    "line_hits": 4,
+    "page_hits": 3,
+    "refs": [
+      {
+        "pIdx": 322,
+        "canvas_num": 327,
+        "orig_page": "355",
+        "lines": 1
+      },
+      {
+        "pIdx": 528,
+        "canvas_num": 533,
+        "orig_page": "588",
+        "lines": 2
+      },
+      {
+        "pIdx": 640,
+        "canvas_num": 645,
+        "orig_page": "708",
+        "lines": 1
+      }
+    ]
+  },
+  {
+    "category": "Places",
+    "name": "Graz (Styria)",
+    "qid": "Q13298",
+    "wd_label": "Graz",
+    "wd_desc": "Capital of Styria, Austria; home city of Frater Bernardin at the first Capuchin friary ('zu Grätz... in dem alten Kloster in der Stadt')",
+    "line_hits": 1,
+    "page_hits": 1,
+    "refs": [
+      {
+        "pIdx": 447,
+        "canvas_num": 452,
+        "orig_page": "507",
+        "lines": 1
+      }
+    ]
   }
 ]

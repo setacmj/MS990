@@ -198,6 +198,7 @@ def generate_html(data: dict):
     # Pre-render page options for fast switching
     page_options = [
         '<option value="landing">Overview &amp; Summary (Landing Page)</option>',
+        '<option value="research">Historical Study: Frater Bernardin, Sources &amp; Provenance</option>',
         '<option value="index">Index: Ingredients, People, Places &amp; Terms</option>',
         f'<option value="figures">Figures &amp; Diagrams ({total_figs})</option>',
     ]
@@ -881,11 +882,12 @@ def generate_html(data: dict):
 <body>
   <header>
     <div class="header-titles">
-      <h1>Wellcome MS.990 · Parallel Critical Edition</h1>
-      <p>Austro-Bavarian Medical &amp; Surgical Compendium (ca. 1650–1680) · {total_pages} Canvases · {total_lines:,} Lines</p>
+      <h1>Wellcome MS.990 &middot; Parallel Critical Edition</h1>
+      <p>Frater Bernardin, OFMCap (Graz, Styria, c. 1696) &middot; {total_pages} Canvases &middot; {total_lines:,} Lines</p>
     </div>
     <div class="nav-controls">
       <button type="button" class="btn-secondary" id="btn-home" onclick="showLanding()">Overview</button>
+      <button type="button" class="btn-secondary" id="btn-research" onclick="showResearch()">Historical Study</button>
       <button type="button" class="btn-secondary" id="btn-index" onclick="showIndex()">Index</button>
       <button type="button" class="btn-secondary" id="btn-figures" onclick="showFigures()">Figures ({total_figs})</button>
       <button type="button" class="btn-secondary" id="btn-prev" onclick="changePage(-1)">&#9664; Prev</button>
@@ -911,14 +913,18 @@ def generate_html(data: dict):
     sections_jump = [
         ("p. 36 (c.13) · Dental Anatomy & Fumigation", 13, "Watercolour study of four human teeth and a profile portrait of a patient using a brass throat-fumigation tube."),
         ("p. 48 (c.25) · Eye Anatomy Flap Plate (Klappbild)", 25, "Multi-layered anatomical dissection of the eye, extraocular muscles, and seven tunics (flap states on c.727–730)."),
-        ("p. 84 (c.55) · Lacrimal Fistula Surgery", 55, "Operative portrait of a nun after lacrimal fistula incision alongside three illustrated surgical knives and lancets."),
+        ("p. 83 (c.54) · Capuchin Surgeon & Nun: Lacrimal Fistula", 54, "Georg Bartisch's lacrimal fistula operation re-imagined in a convent infirmary with a bearded friar operating on a veiled nun."),
         ("p. 166 (c.137) · Distillation & Alchemical Furnaces", 137, "Full-page watercolor plate of six serpentine distillation trains, alembics, and receivers (pp. 166–168)."),
         ("p. 257 (c.230) · Viscera: Intestines & Omentum", 230, "Four anatomical watercolor drawings of the intestines (Därm), omentum (das Nötz), and peritoneum (pp. 254–257)."),
-        ("p. 352 (c.322) · Early Modern Apothecary Interior", 322, "Full-page watercolor scene depicting the interior of an early modern apothecary and alchemical dispensary."),
-        ("p. 393 (c.358) · Illustrated Materia Medica: Myrobalans", 358, "Five botanical watercolor studies of medicinal myrobalans (Bellerica, Emblica, Chebula, Citrine, and Indica)."),
-        ("p. 542 (c.733) · Monastic Eye-Remedy Apothecary", 733, "Full-page watercolor of a friar dispensing eye remedies beneath five labeled shelves to blindfolded patients."),
-        ("p. 765 (c.699) · Limb Amputation Preparation", 699, "Clinical scene showing a seated patient, surgeon, assistants with curved amputation knife, and instrument table."),
-        ("p. 781 (c.705) · Peasants' & Poor People's Apothecary", 705, "Watercolor of two apothecary shelves opening Paurn, Vnd Armer Leüdt apotecken (remedies for the poor)."),
+        ("p. 352 (c.322) · The Graz Capuchin Apothecary (View I)", 322, "Full-page watercolor of the Graz Klosterapotheke showing Frater Bernardin receiving a prescription slip across the counter."),
+        ("p. 417 (c.381) · The Graz Capuchin Apothecary (View II)", 381, "Second eyewitness view of the same Graz pharmacy room (checkered floor, leaded window, iron-hinged poison cabinet, and bearded friar)."),
+        ("p. 505 (c.450) · 'Mein lieber Frater Bernardin'", 450, "Autobiographical treatise on Sympathetic Healing where a Jesuit theologian addresses the author by name as 'mein lieber Frater Bernardin'."),
+        ("p. 507 (c.452) · The First Friary in Graz & Timaeus (p. 506)", 452, "Bernardin cures 'our Father Preacher in the first friary in the city of Graz' following his citation of Timaeus Lib. 5, c. 8, p. 363."),
+        ("p. 509 (c.454) · July 1696: Herberstein & Bishop Stadion", 454, "Dated NB (July 1696) naming Lord von Herberstein, Jesuit Regent Pater Höpel, and Prince-Bishop Franz Kaspar von Stadion of Lavant (c.455)."),
+        ("p. 542 (c.733) · Monastic Eye-Remedy Dispensary", 733, "Full-page watercolor of the bearded Capuchin apothecary dispensing eye remedies beneath five labeled shelves to blindfolded patients."),
+        ("p. 725 (c.661) · Wounded Man Before a Fortified Bastion", 661, "Head-wound treatise frontispiece set against pre-Alpine hills and a massive cylindrical Renaissance stone artillery bastion."),
+        ("p. 765 (c.699) · Limb Amputation & Pre-Operative Viaticum", 699, "Operative scene with curved amputation knife; the text prescribes early-morning Catholic confession and Communion before sawing."),
+        ("p. 781 (c.705) · Peasants' & Poor People's Apothecary", 705, "Watercolor of two apothecary shelves opening Paurn, Vnd Armer Leüdt apotecken and the 1696 Dreckapotheke remedies."),
     ]
     sec_cards_html = []
     for stitle, scnum, sdesc in sections_jump:
@@ -930,14 +936,40 @@ def generate_html(data: dict):
             f'          </button>\n'
         )
 
+    idx_c450 = cnum_to_idx.get(450, 0)
+    idx_c451 = cnum_to_idx.get(451, 0)
+    idx_c452 = cnum_to_idx.get(452, 0)
+    idx_c453 = cnum_to_idx.get(453, 0)
+    idx_c454 = cnum_to_idx.get(454, 0)
+    idx_c455 = cnum_to_idx.get(455, 0)
+    idx_c456 = cnum_to_idx.get(456, 0)
+    idx_c645 = cnum_to_idx.get(645, 0)
+    idx_c733 = cnum_to_idx.get(733, 0)
+    idx_c322 = cnum_to_idx.get(322, 0)
+    idx_c381 = cnum_to_idx.get(381, 0)
+    idx_c661 = cnum_to_idx.get(661, 0)
+    idx_c025 = cnum_to_idx.get(25, 0)
+    idx_c054 = cnum_to_idx.get(54, 0)
+    idx_c471 = cnum_to_idx.get(471, 0)
+    idx_c699 = cnum_to_idx.get(699, 0)
+    idx_c705 = cnum_to_idx.get(705, 0)
+    idx_c009 = cnum_to_idx.get(9, 0)
+    idx_c327 = cnum_to_idx.get(327, 0)
+    idx_c533 = cnum_to_idx.get(533, 0)
+
     landing_html = f"""    <section class="page-card active" id="landing-card">
       <div class="landing-wrap">
         <div class="landing-hero">
           <h2>Wellcome Collection MS.990: Parallel German–English Edition</h2>
           <p>
-            Compiled in an Austro-Bavarian Franciscan milieu around 1650–1680 (and acquired by Henry Wellcome in 1922 from the Viennese firm Gilhofer &amp; Ranschburg), <b>MS.990</b> is a richly illustrated Early New High German (<i>Frühneuhochdeutsch</i>) medical, surgical, and iatrochemical compendium (<i>Arzneibuch</i>). Although the opening 28 pages are wanting, the surviving codex spans <b>{total_pages} digitized canvases</b> across <b>{total_lines:,} aligned lines</b> and <b>{total_figs} catalogued illustrations and diagrams</b>, uniting Galenic humoral pathology, Paracelsian chemical pharmacy, operative surgery, and vernacular charitable medicine.
+            Long catalogued anonymously as <i>&ldquo;c. 1675, Franciscan Order, Austria or Southern Germany&rdquo;</i> (and stamped <code>CA 1650–1680</code> on its 20th-century binding), <b>Wellcome MS.990</b> can now be attributed on internal autobiographical evidence to <b>Frater Bernardin</b>, a Capuchin lay-brother surgeon-apothecary (<i>Laienbruder</i>) based at <b>&ldquo;the old friary in the city&rdquo; of Graz, Styria</b> (the first Graz Capuchin friary at the Paulustor, founded 1600–1602), who compiled at least the final third of the manuscript in or after <b>July 1696</b>.
+          </p>
+          <p>
+            Although the opening 28 pages are wanting, the surviving codex spans <b>{total_pages} digitized canvases</b> across <b>{total_lines:,} aligned lines</b> and <b>{total_figs} catalogued illustrations and diagrams</b>. Across its books, Frater Bernardin synthesizes <b>Georg Bartisch&rsquo;s <i>Ophthalmodouleia / Augen-Dienst</i></b> (1583; reissued at Nuremberg in <b>1686</b>) and <b>Johann Remmelin&rsquo;s <i>Catoptrum Microcosmicum</i></b> flap-anatomy tradition, the spagyric pharmacopoeias of <b>Oswald Croll</b>, <b>Adrian von Mynsicht</b>, <b>Martin Ruland</b>, <b>Joseph Du Chesne (Quercetanus)</b>, and <b>Johann Schr&ouml;der</b>, the sympathetic medicine of <b>Balthasar Timaeus von G&uuml;ldenklee</b> (explicitly cited on <button type="button" class="page-chip" onclick="showPage({idx_c451})">p. 506 / c.451</button> as <code>Tim&aelig;o Lib. 5. c. 8. p: 363</code>) and <b>Sir Kenelm Digby</b>, the wound surgery of <b>Paracelsus</b> and <b>Felix W&uuml;rtz</b>, and the charitable <i>Paurn, Vnd Armer Le&uuml;dt apotecken</i> paralleling <b>Kristian Franz Paullini&rsquo;s <i>Heilsame Dreck-Apotheke</i> (1696)</b>.
           </p>
           <div class="landing-stats">
+            <span class="badge">Author: Frater Bernardin, OFMCap (Graz)</span>
+            <span class="badge">Date: Post–July 1696 (c. 1696–1700)</span>
             <span class="badge">{total_pages} Canvases</span>
             <span class="badge">{total_lines:,} Aligned Lines</span>
             <span class="badge">{total_figs} Figures &amp; Diagrams</span>
@@ -945,13 +977,91 @@ def generate_html(data: dict):
           </div>
           <div class="landing-actions">
             <button type="button" class="btn-primary" onclick="showPage(0)">Start Reading Edition &rarr;</button>
-            <button type="button" class="btn-secondary" onclick="showIndex()">Browse Index (Ingredients, People, Places &amp; Terms)</button>
+            <button type="button" class="btn-secondary" onclick="showResearch()">Read Historical Study &amp; Source Analysis</button>
+            <button type="button" class="btn-secondary" onclick="showIndex()">Browse Index ({len(entities)} Entities)</button>
             <button type="button" class="btn-secondary" onclick="showFigures()">Browse Figures &amp; Diagrams ({total_figs})</button>
             <button type="button" class="btn-secondary" onclick="openCorpusSearch('')">Search All {total_pages} Pages</button>
           </div>
         </div>
         <div class="landing-grid">
 {''.join(sec_cards_html)}        </div>
+      </div>
+    </section>
+"""
+
+    research_html = f"""    <section class="page-card" id="research-card">
+      <div class="landing-wrap">
+        <div class="landing-hero">
+          <h2>Historical Provenance, Authorship, Printed Sources &amp; Visual Environment</h2>
+          <p>
+            A comprehensive paleographical, source-critical, and iconographic investigation of Wellcome Collection MS.990 across all {total_pages} canvases and {total_lines:,} lines, establishing the identity of its compiler, revising its date of completion from c. 1675 to <b>in or after July 1696</b>, and mapping its printed and local sources.
+          </p>
+          <div class="landing-actions">
+            <button type="button" class="btn-primary" onclick="showPage({idx_c450})">Inspect Canvas 450 (p. 505: &ldquo;Frater Bernardin&rdquo;) &rarr;</button>
+            <button type="button" class="btn-secondary" onclick="showPage({idx_c452})">Inspect Canvas 452 (p. 507: First Friary in Graz)</button>
+            <button type="button" class="btn-secondary" onclick="showPage({idx_c454})">Inspect Canvas 454 (p. 509: July 1696 Herberstein Entry)</button>
+            <button type="button" class="btn-secondary" onclick="showPage({idx_c455})">Inspect Canvas 455 (p. 510: Prince-Bishop Stadion)</button>
+          </div>
+        </div>
+
+        <div class="landing-hero">
+          <h2>1. Authorship and Monastic Provenance: Frater Bernardin of the Capuchin Friary in Graz</h2>
+          <p>
+            Although MS.990 lacks a formal title page—opening on Canvas 7 (original <code>p. 29</code>) amidst remedies for head and dental ailments—the author-compiler reveals his religious name, rank, order, and home city in a sequence of autobiographical case histories embedded within the treatise on sympathetic medicine (<button type="button" class="page-chip" onclick="showPage({idx_c450})">p. 505 / c.450</button> to <button type="button" class="page-chip" onclick="showPage({idx_c456})">p. 511 / c.456</button>). On <button type="button" class="page-chip" onclick="showPage({idx_c450})">p. 505 (c.450, right col., l. 6)</button>, while recounting a dinner-table debate over the legitimacy of the sympathetic powder (<i>Pulvis Sympatheticus</i>), he records his Jesuit interlocutor&rsquo;s direct form of address: <b><i>&ldquo;darauf sprach der Jesuwiter: mein lieber Frater Bernardin&rdquo;</i></b> (&ldquo;Thereupon the Jesuit spoke: my dear Brother Bernardin&rdquo;). Throughout the manuscript, Bernardin distinguishes his status as <i>Frater</i>—a non-ordained lay brother (<i>Laienbruder</i>) trained as an infirmarian, apothecary, and surgeon—from the ordained priests of his community, whom he calls <i>Patres</i> (such as <i>&ldquo;unser Pater Prediger&rdquo;</i>, &ldquo;our Father Preacher&rdquo;).
+          </p>
+          <p>
+            Two pages later, on <button type="button" class="page-chip" onclick="showPage({idx_c452})">p. 507 (c.452, left col., ll. 21–23)</button>, Frater Bernardin anchors his institutional home in <b>Graz</b>, capital of the Duchy of Styria, while providing a decisive topographical clue to his specific religious order: <b><i>&ldquo;ich befande mich eines mall zu Gr&auml;tz. und in dem alten Kloster in der Stadt. eben unser Pater Prediger in dem ersten Kloster ware mit ein grausamen hand schmerz behaft...&rdquo;</i></b> (&ldquo;I found myself once at Graz, and in the old friary in the city; just then our Father Preacher in the first friary was afflicted with a cruel pain in the hand&rdquo;). In late seventeenth-century Graz, only the <b>Order of Friars Minor Capuchin (OFMCap)</b> operated two separate houses defined internally as &ldquo;the old friary in the city / the first friary&rdquo; versus a newer suburban foundation: the first Capuchin friary at the Paulustor (the <i>Stiegenkloster</i> or Antoniuskloster, founded 1600–1602 within the upper city fortifications, today the Volkskundemuseum) and the second Capuchin friary erected in 1648–1652 outside the inner walls <i>&ldquo;Am Graben&rdquo;</i> (<i>Grabenkloster</i>).
+          </p>
+          <p>
+            This Capuchin provenance is confirmed on <button type="button" class="page-chip" onclick="showPage({idx_c645})">p. 708 (c.645, left col., ll. 4–6)</button>, where Bernardin heads a chapter of travel salves with an in-house formula titled <b><i>&ldquo;Erstlich ein K&ouml;stliches schmaltz Pflaster f&uuml;r die Capuciner. so sie auf Zehrung fassen ~&rdquo;</i></b> (&ldquo;First, a precious lard-plaster for the Capuchins, which they take along for sustenance on their journeys&rdquo;), and by the full-page apothecary paintings on <button type="button" class="page-chip" onclick="showPage({idx_c322})">p. 352 (c.322)</button>, <button type="button" class="page-chip" onclick="showPage({idx_c381})">p. 417 (c.381)</button>, and <button type="button" class="page-chip" onclick="showPage({idx_c733})">p. 542 (c.733)</button>, which portray the friar-apothecary wearing the brown habit, long pointed hood (<i>Kapuze</i>), white knotted cord, rosary, and full beard characteristic of the seventeenth-century Capuchin reform.
+          </p>
+        </div>
+
+        <div class="landing-hero">
+          <h2>2. Redating the Codex (Terminus Post Quem of July 1696) and the Inner Austrian Elite Network</h2>
+          <p>
+            An explicit date written in the primary scribal hand on <button type="button" class="page-chip" onclick="showPage({idx_c454})">p. 509 (c.454, right col., ll. 23–29)</button> moves the completion of MS.990 roughly two decades later than the Wellcome catalogue estimate (<code>c. 1675</code>). Under a rubricated <code>NB:</code>, Frater Bernardin writes: <b><i>&ldquo;In dem Jahr 1696. in monat Juli. dahe ich bey Ihro gnad[en] herrn Von Herberstein. Zu Laboth [or Labach/Lankowitz] auf seiner herschafft. eines tags kam 2 Jesuit[en] br&uuml;der. einer mit Namen pater H&ouml;pel [or H&ouml;gel] Regens in Convicto alda u[nd] mit auch bey der taffel sa&szlig;...&rdquo;</i></b> (&ldquo;In the year 1696, in the month of July, when I was with His Grace the Lord von Herberstein on his lordship/estate; one day two Jesuit fathers came, one by the name of Father H&ouml;pel [or H&ouml;gel], Regent in the Convict there, and also sat with us at table&rdquo;). Because this passage is written continuously in the main text column by the primary hand that continues through <code>p. 790</code> (Canvas 710) and the alphabetical <i>Register</i> (Canvases 711–718), the final third of the manuscript and its index cannot have been completed before <b>July 1696</b>.
+          </p>
+          <p>
+            Every witness named in Bernardin&rsquo;s <code>NB:</code> belongs to the historical elite of Inner Austria. The <b>House of Herberstein</b> was the premier noble family of Styria (with seats at Castle Herberstein, Eggenberg/Graz, and Lankowitz, while Graz-born Sigismund Christoph Graf von Herberstein, 1644–1716, served as Prince-Bishop of Ljubljana/Laibach from 1683 to 1716). The Jesuit interlocutor, <b>Pater H&ouml;pel (or H&ouml;gel), S.J., <i>Regens in Convicto</i></b>, served as Regent of the Jesuit seminary boarding-college (<i>Convict</i>) in Graz or Ljubljana; he testified that the Jesuits used the sympathetic powder in their own <i>Collegium</i> and cited a moral opinion obtained from a <b>Professor of Theology in Paris</b> (<button type="button" class="page-chip" onclick="showPage({idx_c455})">p. 510 / c.455, left col., ll. 6–15</button>). Immediately following, on <button type="button" class="page-chip" onclick="showPage({idx_c455})">p. 510 (c.455, left col., ll. 19–26 &amp; right col., ll. 1–5)</button>, Bernardin names his highest-ranking patient: <b>Prince-Bishop Franz Kaspar von Stadion (1637–1704), Bishop of Lavant</b> (<i>&ldquo;bischoff Von Lauandt. herrn Stadian. welcher bi&szlig; 9 wochen bedinete&rdquo;</i>), who ruled the Carinthian-Styrian Diocese of Lavant at St. Andr&auml; im Lavanttal from <b>1673 to 1704</b> after serving as Imperial Diet director at Regensburg (1666–1672), and whom Bernardin nursed for nine weeks alongside <b><code>docktor heibt</code></b>. On <button type="button" class="page-chip" onclick="showPage({idx_c456})">p. 511 (c.456, left col.)</button>, Bernardin also reveals his own medical condition—chronic gout (<i>&ldquo;du selber hast das Podagra&rdquo;</i>)—explaining that he refuses to transplant his gout into a dog both out of penitential humility before God and out of compassion for dogs (<i>&ldquo;ach erbarmet mich das arme fich... dieweillen ein hund ohne des der Menschen liebs u[nd] thrau ist&rdquo;</i>).
+          </p>
+        </div>
+
+        <div class="landing-hero">
+          <h2>3. Source-Critical Proof of Original Authorship vs. Borrowed First-Person Passages</h2>
+          <p>
+            Four internal philological and paleographical proofs confirm that the <i>Frater Bernardin</i> passages represent original autobiographical writing by the compiler of MS.990 rather than text copied from an earlier exemplar. First, within Canvases 450–452, there is a sharp linguistic boundary between the impersonal third-person Latinate theoretical block translated from an iatrochemical textbook (<button type="button" class="page-chip" onclick="showPage({idx_c450})">p. 505, right col., l. 32</button> to <button type="button" class="page-chip" onclick="showPage({idx_c452})">p. 507, left col., l. 18</button>, where the pronoun <i>ich</i> never appears) and Bernardin&rsquo;s sudden return to colloquial Austrian-Bavarian first-person narrative on line 19 (<i>&ldquo;Widerumb mue&szlig; ich melden das ich selber erfahren... zu Gr&auml;tz&rdquo;</i>). Second, the manuscript exhibits a unique <b>&ldquo;double-telling&rdquo; structure</b>: on <button type="button" class="page-chip" onclick="showPage({idx_c450})">p. 505 (c.450)</button>, Bernardin first tells the stories of the Baron&rsquo;s castle dinner with the two Jesuits and his private audience with the Bishop while explicitly refusing to name any of them (<i>&ldquo;dem ich au&szlig; andern Ursachen mit Namen nit Nenen will&rdquo;</i>); four pages later, on <button type="button" class="page-chip" onclick="showPage({idx_c454})">p. 509–510 (c.454–455)</button>, realizing that skeptical learned readers will demand verifiable witnesses, he inserts a red <code>NB:</code> and re-tells the exact same two conversations word-for-word solely to supply the real date (July 1696) and real names (Lord von Herberstein, Pater H&ouml;pel, and Prince-Bishop Stadion of Lavant). Third, <button type="button" class="page-chip" onclick="showPage({idx_c455})">Canvas 455 (p. 510, left col., ll. 6 &amp; 18)</button> preserves live authorial self-censorship in the manuscript ink, where Bernardin crosses out words mid-line at the exact moments he decides how much identifying detail to disclose about the Parisian theologian and the Bishop of Lavant.
+          </p>
+          <p>
+            Fourth, a full-corpus analysis of all {total_lines:,} lines shows that Frater Bernardin&rsquo;s editorial and clinical voice permeates the entire codex—repeatedly directing readers to his own alphabetical <i>Register</i> at the back of the book (e.g., <code>p. 614 / c.559</code>, <code>p. 629 / c.574</code>, <code>p. 683 / c.622</code>) and recording personal clinical observations on Balsam of Copaiba in Vienna (<button type="button" class="page-chip" onclick="showPage({idx_c009})">p. 32 / c.9</button>), jaw swellings (<code>p. 208 / c.179</code>), charitable fever remedies for the poor (<code>p. 210 / c.181</code>), mistletoe secrets revealed <i>&ldquo;out of Christian love&rdquo;</i> (<code>p. 367 / c.337</code>), curing 60-year-old patients (<code>p. 534 / c.479</code>), questioning learned men on mercury (<code>p. 618 / c.563</code>), and bathing rickety children (<code>p. 641 / c.586</code>). Conversely, source criticism allows us to isolate two &ldquo;borrowed first-person&rdquo; passages copied from external texts: the cataract post-operative regimen on <code>p. 53 (c.30)</code> and <code>p. 74 (c.47)</code>, where the <i>&ldquo;ich&rdquo;</i> belongs to Georg Bartisch&rsquo;s <i>Augen-Dienst</i>, and the antimony-tincture provenance note on <button type="button" class="page-chip" onclick="showPage({idx_c327})">p. 355 (c.327)</button> referencing Master Figler&rsquo;s son.
+          </p>
+        </div>
+
+        <div class="landing-hero">
+          <h2>4. Eyewitness Depictions of the Graz Capuchin Apothecary (Klosterapotheke) and Alpine Fortifications</h2>
+          <p>
+            Inspection of all {total_figs} illustrations across MS.990 reveals that while outdoor backgrounds are mostly schematic hillocks, <button type="button" class="page-chip" onclick="showPage({idx_c661})">Canvas 661 (p. 725)</button> places its wounded figure before steep blue-grey pre-Alpine mountains and a massive cylindrical Renaissance stone artillery bastion (<i>Kanonenbastei</i>) with horizontal masonry courses and gun-slits beside a wayside cross—a setting characteristic of seventeenth-century <b>Graz</b>, where the first Capuchin friary at the Paulustor sat immediately beneath the Renaissance bastions of the <b>Graz Schlo&szlig;berg</b>.
+          </p>
+          <p>
+            Even more remarkably, the full-page interior watercolors on <button type="button" class="page-chip" onclick="showPage({idx_c322})">Canvas 322 (p. 352)</button> and <button type="button" class="page-chip" onclick="showPage({idx_c381})">Canvas 381 (p. 417)</button> (alongside <button type="button" class="page-chip" onclick="showPage({idx_c733})">Canvas 733 / p. 542</button>) depict the <b>exact same monastic pharmacy room</b> from two angles: both feature the same terracotta-and-cream diamond-checkered tile floor, the same four-pane leaded bull&rsquo;s-eye glass window (<i>Butzenscheibenfenster</i>), the same wall-mounted yellow wooden poison cupboard with four black wrought-iron spear-head strap hinges and double keyholes, the same rows of red, yellow, and green cylindrical wooden drug-boxes (<i>Holzb&uuml;chsen</i>) and blue-and-white faience <i>albarelli</i>, and the <b>same bearded Capuchin lay brother in his brown pointed-hood habit and white knotted cord</b>—providing an eyewitness visual record of Frater Bernardin and the Graz Capuchin <i>Klosterapotheke</i> around 1696.
+          </p>
+        </div>
+
+        <div class="landing-hero">
+          <h2>5. Principal Printed Precedents and Textual Sources</h2>
+          <p>
+            <b>Ophthalmology (<code>pp. 48–174</code>, <button type="button" class="page-chip" onclick="showPage({idx_c025})">c.25–145</button>):</b> Adapted from <b>Georg Bartisch&rsquo;s (1535–1607) <i>Ophthalmodouleia / Augen-Dienst</i></b> (Dresden, 1583; <b>reissued in a modernized quarto edition at Nuremberg in 1686</b> by Georg Scheurer and Abraham Lichtenthaler, just ten years before Frater Bernardin&rsquo;s 1696 entry) and supplemented on <code>p. 48–49</code> with the multi-layer anatomical flap-sheet (<i>Klappbild</i>) tradition of <b>Johann Remmelin&rsquo;s <i>Catoptrum Microcosmicum / Kleiner Welt-Spiegel</i></b> (1613/1661). On <button type="button" class="page-chip" onclick="showPage({idx_c054})">p. 83–84 (c.54–55)</button>, Bartisch&rsquo;s Saxon barber-surgeon is confessionally re-imagined as a brown-robed Capuchin/Franciscan friar operating on a veiled nun&rsquo;s lacrimal fistula.
+          </p>
+          <p>
+            <b>Iatrochemistry &amp; Spagyric Pharmacy (<code>pp. 350–465</code>, <button type="button" class="page-chip" onclick="showPage({idx_c322})">c.321–425</button>):</b> Cites <b>Oswald Croll&rsquo;s <i>Basilica Chymica</i></b> (1609; 9 citations, including <i>Emplastrum Sticticum Crollii</i> and <i>Antimonium diaphoreticum</i>), <b>Adrian von Mynsicht&rsquo;s <i>Thesaurus et Armamentarium Medico-Chymicum</i></b> (1631, German eds. 1682/1695; 10 citations, including <i>Emplastrum Diaphoreticum Mynsichti</i>), <b>Martin Ruland</b> (6 citations for <i>Balsamum Sulphuris Rulandi</i>), <b>Joseph Du Chesne / Quercetanus</b> (<i>Pilulae de Tartaro Quercetani</i>), and <b>Johann Schr&ouml;der&rsquo;s <i>Pharmacopoeia Medico-Chymica</i></b> (German ed. <i>Vollst&auml;ndige und nutzreiche Apotheke</i>, Nuremberg 1685/1693), plus the first-person royal charter of <b>Queen Elisabeth of Hungary&rsquo;s Water</b> (<button type="button" class="page-chip" onclick="showPage({idx_c471})">p. 527 / c.471</button>).
+          </p>
+          <p>
+            <b>Sympathetic &amp; Magnetic Medicine (<code>pp. 505–511</code>, <button type="button" class="page-chip" onclick="showPage({idx_c450})">c.450–456</button>):</b> Explicitly cites <b>Balthasar Timaeus von G&uuml;ldenklee (1600–1667)</b> (<button type="button" class="page-chip" onclick="showPage({idx_c451})">p. 506 / c.451</button>: <code>Tim&aelig;o Lib. 5. c. 8. p: 363</code>, from <i>Casus Medicinales / Epistolae et Consilia</i>, 1662/1667) on disease transplantation, follows <b>Sir Kenelm Digby&rsquo;s (1603–1665)</b> solar calcination of white vitriol in August when the Sun enters Leo (<button type="button" class="page-chip" onclick="showPage({idx_c453})">p. 508 / c.453</button>; cf. Nuremberg <i>Theatrum Sympatheticum</i>, 1662), and harmonizes Paracelsian <i>Spiritus Vitalis / Mumie</i> with Jesuit natural philosophy (Athanasius Kircher, S.J.).
+          </p>
+          <p>
+            <b>Wound Surgery, Fractures, Amputation &amp; Charitable Pharmacy (<code>pp. 521–789</code>, <button type="button" class="page-chip" onclick="showPage({idx_c699})">c.466–709</button>):</b> Cites <b>Paracelsus</b> (10 citations) and <b>Felix W&uuml;rtz&rsquo;s <i>Practica der Wundartzney</i></b> (1563; 4 citations, including <i>Felix Wirzii Bruch-Pflaster</i> and his warning against greasy salves in inflamed fractures), alongside late-seventeenth-century baroque field surgery (cf. <b>Matth&auml;us Gottfried Purmann</b>, 1680/1692), pre-amputation Catholic confession and Communion (<button type="button" class="page-chip" onclick="showPage({idx_c699})">p. 765 / c.699</button>), and the concluding <b><i>Paurn, Vnd Armer Le&uuml;dt apotecken</i></b> (<button type="button" class="page-chip" onclick="showPage({idx_c705})">p. 781–789 / c.705–709</button>), whose kitchen-staple, animal, and excremental remedies coincide directly with the publication year of <b>Kristian Franz Paullini&rsquo;s <i>Heilsame Dreck-Apotheke</i> (Frankfurt, 1696)</b>.
+          </p>
+        </div>
       </div>
     </section>
 """
@@ -1082,7 +1192,7 @@ def generate_html(data: dict):
       </div>
     </section>
 """
-    html_content += landing_html + index_html + figures_html
+    html_content += landing_html + research_html + index_html + figures_html
 
     # Generate page blocks
     cards_html = []
@@ -1231,6 +1341,14 @@ def generate_html(data: dict):
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    function showResearch() {
+      currentIndex = -1;
+      document.querySelectorAll('.page-card').forEach(el => el.classList.remove('active'));
+      document.getElementById('research-card').classList.add('active');
+      document.getElementById('page-select').value = 'research';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     function showIndex() {
       currentIndex = -1;
       document.querySelectorAll('.page-card').forEach(el => el.classList.remove('active'));
@@ -1302,6 +1420,7 @@ def generate_html(data: dict):
 
     function jumpToPage(val) {
       if (val === 'landing') return showLanding();
+      if (val === 'research') return showResearch();
       if (val === 'index') return showIndex();
       if (val === 'figures') return showFigures();
       showPage(parseInt(val, 10));

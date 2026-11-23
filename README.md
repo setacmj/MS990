@@ -1,9 +1,10 @@
 # Wellcome Collection MS.990 — Digital Diplomatic Edition & English Translation
 
-A complete digital diplomatic transcription, English translation, TEI P5 XML edition, and parallel German–English edition for **Wellcome Collection MS.990** (*Compendium of Medicine and Surgery*, Austro-Bavarian Franciscan provenance, ca. 1650–1680), compiled from the Wellcome IIIF digitisation (`b18775275`).
+A complete digital diplomatic transcription, English translation, TEI P5 XML edition, and parallel German–English edition for **Wellcome Collection MS.990** (*Compendium of Medicine and Surgery*, compiled in or after **July 1696** by **Frater Bernardin, OFMCap**, a Capuchin lay-brother surgeon-apothecary at *"the old friary in the city"* of **Graz, Styria**; previously catalogued anonymously as *ca. 1650–1680, Franciscan Order*), derived from the Wellcome IIIF digitisation (`b18775275`).
 
-## Browse the Parallel Editions Online
-- **Parallel German–English Facsimile Edition (GitHub Pages):** https://setacmj.github.io/MS990/ — includes an Overview landing page with illustrated highlights, cross-edition full-text search across all 741 pages, a Wikidata-linked **Index** of 102 ingredients, people, places, and terms, and a **Figures & Diagrams (385)** gallery with IIIF `pct:` region crops.
+## Browse the Parallel Editions & Historical Study Online
+- **Parallel German–English Facsimile Edition (GitHub Pages):** https://setacmj.github.io/MS990/ — includes an **Overview** landing page with 14 illustrated highlights, an interactive **Historical Study** tab detailing the discovery of Frater Bernardin, the July 1696 dating, printed precedents, and eyewitness paintings of the Graz Capuchin *Klosterapotheke*, cross-edition full-text search across all 741 pages, a Wikidata-linked **Index** of 110 ingredients, people, places, and terms, and a **Figures & Diagrams (385)** gallery with IIIF `pct:` region crops.
+- **Historical Provenance, Authorship & Printed Sources Study:** [MS990_Historical_Sources_and_Research_Study.md](MS990_Historical_Sources_and_Research_Study.md)
 - **Parallel German–English Markdown (Browsable in GitHub):** [editions/parallel/README.md](editions/parallel/README.md) (split into 25 ~30-page sections so every page renders directly inside GitHub's web viewer)
 - **Methodology, Consistency Audit & Textual Summary:** [MS990_Methodology_and_Corpus_Review.md](MS990_Methodology_and_Corpus_Review.md)
 
