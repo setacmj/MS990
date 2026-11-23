@@ -1,10 +1,9 @@
 # Wellcome Collection MS.990 — Digital Diplomatic Edition & English Translation
 
-A complete digital diplomatic transcription, English translation, TEI P5 XML edition, and interactive web explorer for **Wellcome Collection MS.990** (*Compendium of Medicine and Surgery*, Austro-Bavarian Franciscan provenance, ca. 1650–1680), compiled from the Wellcome IIIF digitisation (`b18775275`).
+A complete digital diplomatic transcription, English translation, TEI P5 XML edition, and parallel German–English edition for **Wellcome Collection MS.990** (*Compendium of Medicine and Surgery*, Austro-Bavarian Franciscan provenance, ca. 1650–1680), compiled from the Wellcome IIIF digitisation (`b18775275`).
 
-## Browse Online (No Download Required)
-- **Interactive Manuscript Explorer (GitHub Pages):** https://setacmj.github.io/MS990/
-- **Parallel German–English Facsimile Edition (GitHub Pages):** https://setacmj.github.io/MS990/parallel.html
+## Browse the Parallel Editions Online
+- **Parallel German–English Facsimile Edition (GitHub Pages):** https://setacmj.github.io/MS990/
 - **Parallel German–English Markdown (Browsable in GitHub):** [editions/parallel/README.md](editions/parallel/README.md) (split into 25 ~30-page sections so every page renders directly inside GitHub's web viewer)
 - **Methodology, Consistency Audit & Textual Summary:** [MS990_Methodology_and_Corpus_Review.md](MS990_Methodology_and_Corpus_Review.md)
 
@@ -13,7 +12,7 @@ GitHub's web UI does not render individual Markdown/HTML/XML files larger than ~
 - **TEI P5 XML Edition:** `MS990_tei.xml` (741 pages, 55,875 aligned German/English lines, 189,488 lines of validated TEI XML)
 - **Structured JSON Dataset (63 MB):** Attached to [Release v1.0.0](https://github.com/setacmj/MS990/releases/tag/v1.0.0) (`MS990_edition_data.json`)
 - **Monolithic Parallel & Monolingual Editions:** `MS990_parallel_edition.md`, `MS990_parallel_edition_with_facsimiles.md`, `MS990_parallel_edition_with_facsimiles.html`, `MS990_transcription.txt/.md`, and `MS990_translation.txt/.md`
-- **Build Pipeline:** `generate_edition_outputs.py`, `build_parallel_md.py`, `build_parallel_with_facsimiles.py`, `build_explorer_html.py`, `extract_iiif_structure.py`, and batch modules `pages_batch2.py`–`pages_batch28.py`
+- **Build Pipeline:** `generate_edition_outputs.py`, `build_parallel_md.py`, `build_parallel_with_facsimiles.py`, `extract_iiif_structure.py`, and batch modules `pages_batch2.py`–`pages_batch28.py`
 
 ## Note on Facsimile Images
 Local facsimile JPEGs (`*.jpg`, `images/`) are excluded from Git; the HTML and Markdown editions automatically resolve images via Wellcome Collection's public IIIF endpoints.

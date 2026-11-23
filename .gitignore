@@ -7,6 +7,10 @@ images/
 # Large JSON bundle (attach to GitHub Release / Zenodo instead; >50 MB)
 MS990_edition_data.json
 
+# Excluded interactive explorer
+ms990_explorer.html
+build_explorer_html.py
+
 # OS / Python artifacts
 .DS_Store
 __pycache__/
